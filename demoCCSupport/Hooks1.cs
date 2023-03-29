@@ -1,4 +1,5 @@
-﻿using BoDi;
+﻿using Allure.Commons;
+using BoDi;
 using ConsoleApp1;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -9,9 +10,15 @@ namespace demoCCSupport
     [Binding]
     public sealed class Hooks1
     {
-        // For additional details on SpecFlow hooks see http://go.specflow.org/doc-hooks
+        public static AllureLifecycle allure = AllureLifecycle.Instance;
 
         private readonly IObjectContainer _container;
+
+        [BeforeTestRun]
+        public static void BeforeTestRun()
+        {
+            allure.CleanupResultDirectory();
+        }
 
         public Hooks1(IObjectContainer container) 
         { 

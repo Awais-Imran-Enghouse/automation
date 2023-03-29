@@ -1,6 +1,6 @@
 {
   "allure": {
-    "directory": "C:\\Users\\awais.imran\\Desktop\\Bdd\\demoCCSupport_Jenkin_Git\\target\\allure-results",
+    "directory": "C:\\Users\\awais.imran\\Desktop\\Bdd\\automation\\target\\allure-results",
     "links": [
       "{link}",
       "{issue}",
