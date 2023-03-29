@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-		cd "execute.bat"
+		start "execute.bat"
                 bat "mvn -D clean test"
             }
  
