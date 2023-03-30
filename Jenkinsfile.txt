@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-		start "execute.bat"
+		sh "cd C:\Users\awais.imran\Desktop\Bdd\automation"
+		sh "execute.bat"
                 bat "mvn -D clean test"
             }
  
