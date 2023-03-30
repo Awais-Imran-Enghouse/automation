@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-		start "execute.bat"
+		sh "cd C:\Users\awais.imran\Desktop\Bdd\demoCCSupport_Jenkin_Git"
                 bat "mvn -D clean test"
             }
  
