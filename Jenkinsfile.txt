@@ -4,32 +4,15 @@ pipeline {
     stages {
 
 
-	stage('BUILD') {
-            steps {
-		sh "cd C:\\Users\\awais.imran\\Desktop\\Bdd\\automation",
-		sh "execute.bat"
+	stage('BUILD') 
+		{
+            	steps {
+			sh "cd C:\\Users\\awais.imran\\Desktop\\Bdd\\automation",
+			sh "execute.bat"
                 
-            }
+            	      }
 
-        stage('Test') {
-            steps {
-		sh "cd C:\\Users\\awais.imran\\Desktop\\Bdd\\automation",
-		sh "execute.bat"
-                bat "mvn -D clean test"
-            }
- 
-            post {                
-                // If Maven was able to run the tests, even if some of the test
-                // failed, record the test results and archive the jar file.
-                success { allure([
-                    includeProperties: false,
-                    jdk: '',
-                    properties: [],
-                    reportBuildPolicy: 'ALWAYS',
-                    results: [[path: 'demoCCSupport/bin/Debug/net6.0/allure-results']]
-                ])
-            }
-         }
-    }
-}      
-}
+        
+    		}
+          }      
+       }
