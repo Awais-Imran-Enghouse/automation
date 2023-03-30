@@ -2,6 +2,15 @@ pipeline {
     agent any
  
     stages {
+
+
+	stage('BUILD') {
+            steps {
+		sh "cd C:\\Users\\awais.imran\\Desktop\\Bdd\\automation",
+		sh "execute.bat"
+                
+            }
+
         stage('Test') {
             steps {
 		sh "cd C:\\Users\\awais.imran\\Desktop\\Bdd\\automation",
