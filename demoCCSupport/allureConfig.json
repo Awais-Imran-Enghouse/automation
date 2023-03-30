@@ -1,6 +1,6 @@
 {
   "allure": {
-    "directory": "C:\\Users\\awais.imran\\Desktop\\Bdd\\automation\\target\\allure-results",
+    "directory": "target\\allure-results",
     "links": [
       "{link}",
       "{issue}",
