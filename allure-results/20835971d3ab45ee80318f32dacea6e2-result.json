@@ -1,5 +1,5 @@
 {
-  "uuid": "6c4ab10625424535a4df3da2eb736ee3",
+  "uuid": "95018266c0a5461f8d9f07ffaedd9b81",
   "historyId": "Adding user in CCSupport.",
   "fullName": "Adding user in CCSupport.",
   "labels": [
@@ -42,8 +42,8 @@
       "steps": [],
       "attachments": [],
       "parameters": [],
-      "start": 1680166968906,
-      "stop": 1680166971282
+      "start": 1680250358273,
+      "stop": 1680250360319
     },
     {
       "name": "When  I enter credentials.",
@@ -57,8 +57,8 @@
       "steps": [],
       "attachments": [],
       "parameters": [],
-      "start": 1680166971282,
-      "stop": 1680166971435
+      "start": 1680250360321,
+      "stop": 1680250360555
     },
     {
       "name": "Then  I get logged in.",
@@ -72,8 +72,8 @@
       "steps": [],
       "attachments": [],
       "parameters": [],
-      "start": 1680166971435,
-      "stop": 1680166981474
+      "start": 1680250360555,
+      "stop": 1680250370590
     },
     {
       "name": "When  I click on CCSupport.",
@@ -87,8 +87,8 @@
       "steps": [],
       "attachments": [],
       "parameters": [],
-      "start": 1680166981474,
-      "stop": 1680166993112
+      "start": 1680250370590,
+      "stop": 1680250382403
     },
     {
       "name": "When  I click on add user button.",
@@ -102,8 +102,8 @@
       "steps": [],
       "attachments": [],
       "parameters": [],
-      "start": 1680166993112,
-      "stop": 1680167003205
+      "start": 1680250382403,
+      "stop": 1680250392559
     },
     {
       "name": "When  I enter Username.",
@@ -117,8 +117,8 @@
       "steps": [],
       "attachments": [],
       "parameters": [],
-      "start": 1680167003205,
-      "stop": 1680167003316
+      "start": 1680250392560,
+      "stop": 1680250392643
     },
     {
       "name": "And  I enter Email Address.",
@@ -132,8 +132,8 @@
       "steps": [],
       "attachments": [],
       "parameters": [],
-      "start": 1680167003316,
-      "stop": 1680167003393
+      "start": 1680250392643,
+      "stop": 1680250392799
     },
     {
       "name": "And  I click on the profile tab.",
@@ -147,8 +147,8 @@
       "steps": [],
       "attachments": [],
       "parameters": [],
-      "start": 1680167003393,
-      "stop": 1680167006455
+      "start": 1680250392799,
+      "stop": 1680250395868
     },
     {
       "name": "And  I click the OK button.",
@@ -162,8 +162,8 @@
       "steps": [],
       "attachments": [],
       "parameters": [],
-      "start": 1680167006456,
-      "stop": 1680167020664
+      "start": 1680250395868,
+      "stop": 1680250410043
     },
     {
       "name": "Then  The agent is successfully created.",
@@ -177,12 +177,12 @@
       "steps": [],
       "attachments": [],
       "parameters": [],
-      "start": 1680167020665,
-      "stop": 1680167020666
+      "start": 1680250410044,
+      "stop": 1680250410049
     }
   ],
   "attachments": [],
   "parameters": [],
-  "start": 1680166968787,
-  "stop": 1680167020668
+  "start": 1680250358260,
+  "stop": 1680250410063
 }

@@ -1,6 +1,8 @@
 ﻿using Allure.Commons;
 using BoDi;
 using ConsoleApp1;
+using NUnit.Allure.Core;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using TechTalk.SpecFlow;
@@ -8,6 +10,8 @@ using TechTalk.SpecFlow;
 namespace demoCCSupport
 {
     [Binding]
+    [TestFixture]
+    [AllureNUnit]
     public sealed class Hooks1
     {
         public static AllureLifecycle allure = AllureLifecycle.Instance;
@@ -18,7 +22,16 @@ namespace demoCCSupport
         public static void BeforeTestRun()
         {
             allure.CleanupResultDirectory();
+            
         }
+
+        public void Init()
+        {
+           
+            Environment.CurrentDirectory = Path.GetDirectoryName(GetType().Assembly.Location);
+        }
+
+
 
         public Hooks1(IObjectContainer container) 
         { 

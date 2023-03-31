@@ -1,5 +1,5 @@
 {
-  "uuid": "d8d8e25e7836441799580ae67fb22ddb",
+  "uuid": "fe5a79e236544cb2892bf5696c6c76d7",
   "historyId": "Login to VCC application",
   "fullName": "Login to VCC application",
   "labels": [
@@ -46,8 +46,8 @@
       "steps": [],
       "attachments": [],
       "parameters": [],
-      "start": 1680167022609,
-      "stop": 1680167024859
+      "start": 1680250412038,
+      "stop": 1680250413843
     },
     {
       "name": "When  I enter credentials.",
@@ -61,8 +61,8 @@
       "steps": [],
       "attachments": [],
       "parameters": [],
-      "start": 1680167024859,
-      "stop": 1680167025026
+      "start": 1680250413843,
+      "stop": 1680250414077
     },
     {
       "name": "Then  I get logged in.",
@@ -76,12 +76,12 @@
       "steps": [],
       "attachments": [],
       "parameters": [],
-      "start": 1680167025026,
-      "stop": 1680167035065
+      "start": 1680250414077,
+      "stop": 1680250424110
     }
   ],
   "attachments": [],
   "parameters": [],
-  "start": 1680167022608,
-  "stop": 1680167035066
+  "start": 1680250412038,
+  "stop": 1680250424111
 }

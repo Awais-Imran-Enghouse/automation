@@ -1,6 +1,6 @@
 {
   "allure": {
-    "directory": "target\\allure-results",
+    "directory": "allure-results",
     "links": [
       "{link}",
       "{issue}",

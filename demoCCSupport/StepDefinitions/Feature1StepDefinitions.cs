@@ -1,5 +1,6 @@
 using ConsoleApp1;
 using demoCCSupport.supportClasses;
+using NUnit.Allure.Core;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -9,6 +10,8 @@ using TechTalk.SpecFlow;
 namespace demoCCSupport.StepDefinitions
 {
     [Binding]
+    [TestFixture]
+    [AllureNUnit]
     public class Feature1StepDefinitions
     {
         loginPageObjects loginObjects = new loginPageObjects();
