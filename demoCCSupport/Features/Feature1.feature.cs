@@ -78,11 +78,9 @@ namespace demoCCSupport.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Login to VCC application")]
-        [NUnit.Framework.CategoryAttribute("tag1")]
         public virtual void LoginToVCCApplication()
         {
-            string[] tagsOfScenario = new string[] {
-                    "tag1"};
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login to VCC application", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 8
@@ -120,9 +118,11 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Adding user in CCSupport.")]
+        [NUnit.Framework.CategoryAttribute("DeletingAgent")]
         public virtual void AddingUserInCCSupport_()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "DeletingAgent"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Adding user in CCSupport.", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 14

@@ -9,23 +9,27 @@ using demoCCSupport.supportClasses;
 using OpenQA.Selenium.Chrome;
 using System;
 using TechTalk.SpecFlow;
-
+using FluentAssertions;
+using SeleniumExtras.WaitHelpers;
 namespace ConsoleApp1
 
 {
     [Binding]
     internal class seleniumSetMethod
     {
+        public static object SeleniumExtras { get; private set; }
+        public static object ExpectedConditions { get; private set; }
+
         /* 
-            This method sends/types string in the input field.
-            arguments:
-                driver  : it will take the current running state of browser.
-                element : it take the element that could be either, id, name or X_path.
-                elementType : It takes the type of element such as id, name or x-path.
-        */
+This method sends/types string in the input field.
+arguments:
+driver  : it will take the current running state of browser.
+element : it take the element that could be either, id, name or X_path.
+elementType : It takes the type of element such as id, name or x-path.
+*/
 
 
-       
+
 
         public static void EnterText( string element, ProperType elementType, string value, IWebDriver driver)
         {
@@ -43,7 +47,7 @@ namespace ConsoleApp1
             }
             if (elementType == ProperType.X_Path)
             {
-                propertiesCollection.driver.FindElement(By.XPath(element)).SendKeys(value);
+                driver.FindElement(By.XPath(element)).SendKeys(value);
             }
         }
 
@@ -76,15 +80,23 @@ namespace ConsoleApp1
 
             if (elementType == ProperType.Id)
             {
-                return driver.FindElement(By.Id(element)).Text;
+                IWebElement Text_WE = driver.FindElement(By.Id(element));
+                string text = Text_WE.Text;
+                return text;
             }
             else if (elementType == ProperType.Name)
             {
-                return driver.FindElement(By.Name(element)).Text;
+                //return driver.FindElement(By.Name(element)).Text;
+                IWebElement Text_WE = driver.FindElement(By.Name(element));
+                string text = Text_WE.Text;
+                return text;
             }
             else if(elementType == ProperType.X_Path)
             {
-                return driver.FindElement(By.XPath(element)).Text;
+                //return driver.FindElement(By.XPath(element)).Text;
+                IWebElement Text_WE = driver.FindElement(By.XPath(element));
+                string text = Text_WE.Text;
+                return text;
             }
 
             else
@@ -94,7 +106,24 @@ namespace ConsoleApp1
 
         }
 
-
+        public static void ExplicitWait(string element, ProperType elementType, IWebDriver driver)
+        {
+            if (elementType == ProperType.X_Path)
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+                IWebElement firstResult = wait.Until(driver => driver.FindElement(By.XPath(element)));
+            }
+            if (elementType == ProperType.Id)
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+                IWebElement firstResult = wait.Until(driver => driver.FindElement(By.Id(element)));
+            }
+            if (elementType == ProperType.Name)
+            {
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+                IWebElement firstResult = wait.Until(driver => driver.FindElement(By.Name(element)));
+            }
+        }
 
 
         public static void SelectDropDown( string element, ProperType elementType, string value)

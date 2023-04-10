@@ -21,10 +21,11 @@ namespace demoCCSupport.supportClasses
     {
         public string UsernameId = "menuHeaderUser";
         public string CCSupportXPath = "(//a[@title=\"CCSUPPORT\"])[2]";
-        
+        public string AgentId = "tblVccGrid_row2_username";
     }
     class CCSuportModuleObjects
     {
+        public string url = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=76cf08c6-f261-4202-a96b-0c07b4254aca&uc=Users";
         public string AddNewUserButtonId = "btnNew";
         public string UsernameInputbarId = "txtUsername";
         public string EmailInputbarId = "txtEmail";
@@ -32,7 +33,7 @@ namespace demoCCSupport.supportClasses
         public string Username = "Dummy Agent2";
         public string Email = "Dummyagent2@grr.la";
         public string ProfileTabOkButtonID = "btnSave";
-        public string UserReactivationButtonXpath = "(//button[@class=\'voxui-button voxui-default ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only\'])[2]";
+        public string UserReactivationButtonXpath = "(//button/span[contains(text(),'Ok')])[3]";
 
     }
 

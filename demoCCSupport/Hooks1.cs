@@ -1,8 +1,10 @@
 ﻿using Allure.Commons;
 using BoDi;
 using ConsoleApp1;
+using demoCCSupport.supportClasses;
 using NUnit.Allure.Core;
 using NUnit.Framework;
+using NUnit.Framework.Internal.Execution;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using TechTalk.SpecFlow;
@@ -14,6 +16,13 @@ namespace demoCCSupport
     [AllureNUnit]
     public sealed class Hooks1
     {
+        // taking files in
+        loginPageObjects loginObjects = new loginPageObjects();
+        HomePageObjects homePageObjects = new HomePageObjects();
+        CCSuportModuleObjects ccSupportModuleObject = new CCSuportModuleObjects();
+        // taken
+
+
         public static AllureLifecycle allure = AllureLifecycle.Instance;
 
         private readonly IObjectContainer _container;
@@ -24,6 +33,7 @@ namespace demoCCSupport
             allure.CleanupResultDirectory();
             
         }
+
 
         public void Init()
         {
@@ -38,15 +48,14 @@ namespace demoCCSupport
             _container = container; 
         }
 
-        [BeforeScenario("@tag1")]
-        public void BeforeScenarioWithTag()
+
+        [AfterScenario("@tag1", Order=0)]
+        public void BeforeScenarioWithTag1()
         {
-            // Example of filtering hooks using tags. (in this case, this 'before scenario' hook will execute if the feature/scenario contains the tag '@tag1')
             // See https://docs.specflow.org/projects/specflow/en/latest/Bindings/Hooks.html?highlight=hooks#tag-scoping
-
-            //TODO: implement logic that has to run before executing each scenario
-
+            Console.WriteLine("This is the after scenario tag");
         }
+
 
         [BeforeScenario(Order = 0)]
         public void FirstBeforeScenario()
@@ -54,17 +63,54 @@ namespace demoCCSupport
             // Example of ordering the execution of hooks
             // See https://docs.specflow.org/projects/specflow/en/latest/Bindings/Hooks.html?highlight=order#hook-execution-order
 
-            //TODO: implement logic that has to run before executing each scenario
-
-            //propertiesCollection.driver = new ChromeDriver();
-            //Console.WriteLine("Open browser");
-
             IWebDriver driver = new ChromeDriver();
             _container.RegisterInstanceAs<IWebDriver>(driver);
 
         }
 
-        [AfterScenario]
+
+
+        
+        [AfterScenario("@DeletingAgent", Order = 0)]
+        public void DeletingAgent()
+        {
+
+
+            //TODO: implement logic that has to run after executing each scenario
+            Console.WriteLine("Deleting the added agent");
+            var driver = _container.Resolve<IWebDriver>();
+            //driver.Navigate().GoToUrl(ccSupportModuleObject.url);
+            //Thread.Sleep(10000);
+            seleniumSetMethod.ExplicitWait(element: "//tbody[@id='tblVccGrid_body']/tr", elementType: ProperType.X_Path, driver: driver);
+            IList<IWebElement> all = driver.FindElements(By.XPath("//tbody[@id='tblVccGrid_body']/tr"));
+
+
+
+            Console.WriteLine("total agent is : " + all.Count);
+            for (int i = 1; i <= all.Count; i++)
+            {
+                string id = "tblVccGrid_row" + i + "_username";
+                string name;
+                string username = ccSupportModuleObject.Username;
+                name = seleniumSetMethod.GetText(element: id, ProperType.Id, driver: driver);
+                Console.WriteLine(name);
+
+                if (name == username)
+                {
+                    Console.WriteLine("User name is matched and is about to be deleted" + name);
+                    seleniumSetMethod.Click(element: "//a[@title='Delete Dummy Agent2']", ProperType.X_Path, driver: driver);
+                    seleniumSetMethod.Click(element: "(//button/span[contains(text(),'Ok')])[3]", ProperType.X_Path, driver: driver);
+
+                }
+            }
+            Thread.Sleep(10000);
+            
+        }
+    
+
+
+
+    [AfterScenario(Order =1)]
         public void AfterScenario()
         {
             //TODO: implement logic that has to run after executing each scenario
