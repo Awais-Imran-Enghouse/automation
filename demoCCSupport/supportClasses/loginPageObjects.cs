@@ -30,6 +30,7 @@ namespace demoCCSupport.supportClasses
         public string UsernameInputbarId = "txtUsername";
         public string EmailInputbarId = "txtEmail";
         public string ProfileTabId = "ui-id-12";
+        public string ProfileTabXPath = "(//a[contains(text(),'Profiles')])[2]";
         public string Username = "Dummy Agent2";
         public string Email = "Dummyagent2@grr.la";
         public string ProfileTabOkButtonID = "btnSave";

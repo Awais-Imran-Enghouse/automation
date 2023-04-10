@@ -101,6 +101,7 @@ namespace demoCCSupport.StepDefinitions
         {
             try
             {
+                Thread.Sleep(5000);
                 string agent = "";
                 seleniumSetMethod.ExplicitWait(element: homePageObjects.CCSupportXPath, elementType: ProperType.X_Path, driver: driver);
                 seleniumSetMethod.Click(element: homePageObjects.CCSupportXPath, elementType: ProperType.X_Path, driver: driver);
@@ -193,7 +194,7 @@ namespace demoCCSupport.StepDefinitions
             {
                 driver.Manage().Window.Maximize();
                 Thread.Sleep(10000);
-                seleniumSetMethod.Click(element: ccSupportModuleObject.ProfileTabId, elementType: ProperType.Id, driver: driver);
+                seleniumSetMethod.Click(element: ccSupportModuleObject.ProfileTabXPath, elementType: ProperType.X_Path, driver: driver);
                 //Thread.Sleep(3000);
             }
             catch (Exception e)
