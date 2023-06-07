@@ -23,7 +23,7 @@ namespace demoCCSupport.supportClasses
         public string CCSupportXPath = "(//a[@title=\"CCSUPPORT\"])[2]";
         public string AgentId = "tblVccGrid_row2_username";
     }
-    class  CCSuportModuleObjects
+    class CCSuportModuleObjects
     {
         public string url = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=76cf08c6-f261-4202-a96b-0c07b4254aca&uc=Users";
         public string AddNewUserButtonId = "btnNew";
@@ -35,9 +35,7 @@ namespace demoCCSupport.supportClasses
         public string Email = "Dummyagent2@grr.la";
         public string ProfileTabOkButtonID = "btnSave";
         public string UserReactivationButtonXpath = "(//button/span[contains(text(),'Ok')])[3]";
-        public string ListOfAgentsXpath = "//tbody[@id='tblVccGrid_body']/tr";
-        public string AddedAgentXpath = "//a[@title='Delete ']";
-        public string DeletingOkButtonXpath = "(//button/span[contains(text(),'Ok')])[3]";
+
     }
 
 }

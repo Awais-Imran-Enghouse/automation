@@ -78,11 +78,9 @@ namespace demoCCSupport.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Login to VCC application")]
-        [NUnit.Framework.CategoryAttribute("tag1")]
         public virtual void LoginToVCCApplication()
         {
-            string[] tagsOfScenario = new string[] {
-                    "tag1"};
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Login to VCC application", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 8
