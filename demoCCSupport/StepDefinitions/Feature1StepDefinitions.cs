@@ -35,8 +35,6 @@ namespace demoCCSupport.StepDefinitions
             try
             {
                 driver.Navigate().GoToUrl(loginObjects.url);
-                //driver.Manage().Window().
-                //driver.Manage().Window.Maximize();
                 Console.WriteLine("Open Url");
             }
             catch(Exception e) 
@@ -105,9 +103,14 @@ namespace demoCCSupport.StepDefinitions
                 string agent = "";
                 seleniumSetMethod.ExplicitWait(element: homePageObjects.CCSupportXPath, elementType: ProperType.X_Path, driver: driver);
                 seleniumSetMethod.Click(element: homePageObjects.CCSupportXPath, elementType: ProperType.X_Path, driver: driver);
+
                 Thread.Sleep(10000);
-                seleniumSetMethod.ExplicitWait(element: "//tbody[@id='tblVccGrid_body']/tr", elementType: ProperType.X_Path, driver: driver);
-                IList<IWebElement> all = driver.FindElements(By.XPath("//tbody[@id='tblVccGrid_body']/tr"));
+                //Hooks1 hooks1 = new Hooks1().DeletingAgent();
+
+                //seleniumSetMethod.ExplicitWait(element: "//tbody[@id='tblVccGrid_body']/tr", elementType: ProperType.X_Path, driver: driver);
+                seleniumSetMethod.ExplicitWait(element: ccSupportModuleObject.ListOfAgentsXpath, elementType: ProperType.X_Path, driver: driver);
+                //IList<IWebElement> all = driver.FindElements(By.XPath("//tbody[@id='tblVccGrid_body']/tr"));
+                IList<IWebElement> all = driver.FindElements(By.XPath(ccSupportModuleObject.ListOfAgentsXpath));
                 int sum = all.Count + 5;
                 Console.WriteLine("Agent name is : " + agent);
                 Console.WriteLine("total agent is : " + all.Count + " " + sum);
@@ -122,9 +125,9 @@ namespace demoCCSupport.StepDefinitions
                     if (name == username)
                     {
                         Console.WriteLine("User name is matched and is about to be deleted" + name);
-                        seleniumSetMethod.Click(element: "//a[@title='Delete Dummy Agent2']", ProperType.X_Path, driver: driver);
-                        seleniumSetMethod.Click(element: "(//button/span[contains(text(),'Ok')])[3]", ProperType.X_Path, driver: driver);
-
+                       
+                        seleniumSetMethod.Click(element: ccSupportModuleObject.AddedAgentXpath.Insert(19, ccSupportModuleObject.Username), ProperType.X_Path, driver: driver);
+                        seleniumSetMethod.Click(element: ccSupportModuleObject.DeletingOkButtonXpath, ProperType.X_Path, driver: driver);
                     }
                 }
             }

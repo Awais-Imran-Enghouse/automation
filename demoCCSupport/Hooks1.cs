@@ -48,7 +48,6 @@ namespace demoCCSupport
             _container = container; 
         }
 
-
         [AfterScenario("@tag1", Order=0)]
         public void BeforeScenarioWithTag1()
         {
@@ -81,9 +80,8 @@ namespace demoCCSupport
             var driver = _container.Resolve<IWebDriver>();
             //driver.Navigate().GoToUrl(ccSupportModuleObject.url);
             //Thread.Sleep(10000);
-            seleniumSetMethod.ExplicitWait(element: "//tbody[@id='tblVccGrid_body']/tr", elementType: ProperType.X_Path, driver: driver);
-            IList<IWebElement> all = driver.FindElements(By.XPath("//tbody[@id='tblVccGrid_body']/tr"));
-
+            seleniumSetMethod.ExplicitWait(element: ccSupportModuleObject.ListOfAgentsXpath, elementType: ProperType.X_Path, driver: driver);
+            IList<IWebElement> all = driver.FindElements(By.XPath(ccSupportModuleObject.ListOfAgentsXpath));
 
 
             Console.WriteLine("total agent is : " + all.Count);
@@ -98,8 +96,8 @@ namespace demoCCSupport
                 if (name == username)
                 {
                     Console.WriteLine("User name is matched and is about to be deleted" + name);
-                    seleniumSetMethod.Click(element: "//a[@title='Delete Dummy Agent2']", ProperType.X_Path, driver: driver);
-                    seleniumSetMethod.Click(element: "(//button/span[contains(text(),'Ok')])[3]", ProperType.X_Path, driver: driver);
+                    seleniumSetMethod.Click(element: ccSupportModuleObject.AddedAgentXpath.Insert(19, ccSupportModuleObject.Username), ProperType.X_Path, driver: driver);
+                    seleniumSetMethod.Click(element: ccSupportModuleObject.DeletingOkButtonXpath, ProperType.X_Path, driver: driver);
 
                 }
             }
