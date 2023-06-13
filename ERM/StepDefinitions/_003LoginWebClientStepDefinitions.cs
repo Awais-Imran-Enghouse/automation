@@ -43,11 +43,19 @@ namespace ERM.StepDefinitions
         {
             seleniumSetMethod.Click(element:webClientLoginPageObjects.OkButtonXpath, elementType:ProperType.X_Path, driver:driver);
             Thread.Sleep(5000);
+            //seleniumSetMethod.Click(element: webClientLoginPageObjects.AlreadyLoggedButtonId, elementType: ProperType.Id, driver: driver);
+            try
+            {
+                seleniumSetMethod.Click(element: webClientLoginPageObjects.AlreadyLoggedButtonId, elementType: ProperType.Id, driver: driver);
+                
+            }
+            catch (Exception ex) { Console.WriteLine(ex); }
         }
 
         [When(@"I click on OK button again on webclient login page\.")]
         public void WhenIClickOnOKButtonAgain_()
         {
+            
             seleniumSetMethod.Click(element: webClientLoginPageObjects.OkButtonOnNextPageXpath, elementType: ProperType.X_Path, driver: driver);
         }
 

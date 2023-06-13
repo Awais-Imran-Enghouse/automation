@@ -86,7 +86,7 @@ namespace ERM.supportClasses
         public string UsernameTextXpath = "//div/label[@for=\"txtUsername\"]";
         public string QueueSelctedXpath = "//div[@aria-disabled=\"true\"]/div/span[contains(text(),\"{0}\")]";
         public string QueueChangedXpath = "//div[@aria-disabled=\"false\"]/div/span[contains(text(),\"{0}\")]";
-
+        public string AlreadyLoggedButtonId = "btnAlreadyLoggedInOK";
     }
 
 }

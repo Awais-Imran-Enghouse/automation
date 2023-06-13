@@ -135,6 +135,7 @@ namespace ERM.StepDefinitions
         [When(@"I get the selected queue as well as changed queue\.")]
         public void WhenIGetTheSelectedQueueAsWellAsChangedQueue_()
         {
+            Thread.Sleep(5000);
             string selected_queue_xpath = String.Format(webClientLoginPageObjects.QueueSelctedXpath, ccSupportModuleObject.QueueNamesList[0]);
             string selected_queue_name = seleniumSetMethod.GetText(element:selected_queue_xpath,elementType:ProperType.X_Path, driver:driver);
             Thread.Sleep(2000);
