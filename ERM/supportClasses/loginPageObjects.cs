@@ -9,7 +9,7 @@ namespace ERM.supportClasses
     class loginPageObjects
     {
 
-        //public string url = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/Login.aspx";
+        public string url = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/Login.aspx";
         public string UsernameInputbarId = "txtUsername";
         public string PasswordInputbarId = "txtPassword";
         public string Username = "superadmin";
@@ -18,22 +18,22 @@ namespace ERM.supportClasses
         public string SubmitButtonXpath = "//*[@id=\"lbtLoginSubmit\"]/span";
         public string ErrorMsgId = "ui-id-1";
         //arbaz VM
-        public string url = "http://pkrd-akh-vcct1.vcc.bel.rd.eilab.biz/VccWebCenter/Login.aspx";
+        //public string url = "http://pkrd-akh-vcct1.vcc.bel.rd.eilab.biz/VccWebCenter/Login.aspx";
 
 
     }
     class HomePageObjects
     {
         public string UsernameId = "menuHeaderUser";
-        //public string CCSupportXPath = "(//a[@title=\"CCSUPPORT\"])[2]";
+        public string CCSupportXPath = "(//a[@title=\"CCSUPPORT\"])[2]";
         public string AgentId = "tblVccGrid_row2_username";
         public string UsernameToBe = "Super Admin";
         //arbaz VM
-        public string CCSupportXPath = "(//a[@title=\"CC\"])[2]";
+        //public string CCSupportXPath = "(//a[@title=\"CC\"])[2]";
     }
     class CCSuportModuleObjects
     {
-        //public string url = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=76cf08c6-f261-4202-a96b-0c07b4254aca&uc=Users";
+        public string url = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=76cf08c6-f261-4202-a96b-0c07b4254aca&uc=Users";
         public string AddNewUserButtonId = "btnNew";
         public string AddNewUserButtonXpath = "//div[@id=\"divGrid\"]/a[@role=\"button\"]/span[@class=\"icon\"]";
         public string AddNewQueueButtonXpath = "//div[@id=\"divGrid\"]/a[@role=\"button\"]/span[@class=\"icon\"]";
@@ -64,22 +64,22 @@ namespace ERM.supportClasses
         public string QueueListXpath = "//tbody[@id='tblVccGrid_body']/tr";
         public string QueueUrl = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=76cf08c6-f261-4202-a96b-0c07b4254aca&uc=Queues";
         public string QueueAlreadyPresentOkXpath = "(//span[contains(text(),'Ok')])[6]";
-        //public string QueueSelectedRadioButtonXpath = "(//td[contains(text(),\"{0}\")]/parent::tr/td)[2]/div/label[@for=\"ckbQueueSelected7_InteractionID7_UserID6\"]";
-        //public string QueueChangedRadioButtonXpath = "(//td[contains(text(),\"{0}\")]/parent::tr/td)[3]/div/label[@for=\"ckbQueueChange8_InteractionID7_UserID6\"]";
+        public string QueueSelectedRadioButtonXpath = "(//td[contains(text(),\"{0}\")]/parent::tr/td)[2]/div/label[@for=\"ckbQueueSelected7_InteractionID7_UserID6\"]";
+        public string QueueChangedRadioButtonXpath = "(//td[contains(text(),\"{0}\")]/parent::tr/td)[3]/div/label[@for=\"ckbQueueChange8_InteractionID7_UserID6\"]";
         public string QueuePageOkButtonId = "btnSave";
         public string AgentNameSuffixIdPart = "_username";
         public string AgentEditSuffixIdPart = "_edit";
         public List<string> QueueNamesList = new List<string> { "Dummy Queue1", "Dummy Queue2" };
 
         //arbaz VM
-        public string url = "http://pkrd-akh-vcct1.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=20fcce3b-d8c3-41f8-a62b-531b79189c22&uc=Users";
-        public string QueueSelectedRadioButtonXpath = "(//td[contains(text(),\"{0}\")]/parent::tr/td)[2]/div/label";
-        public string QueueChangedRadioButtonXpath = "(//td[contains(text(),\"{0}\")]/parent::tr/td)[3]/div/label";
+        //public string url = "http://pkrd-akh-vcct1.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=20fcce3b-d8c3-41f8-a62b-531b79189c22&uc=Users";
+        //public string QueueSelectedRadioButtonXpath = "(//td[contains(text(),\"{0}\")]/parent::tr/td)[2]/div/label";
+        //public string QueueChangedRadioButtonXpath = "(//td[contains(text(),\"{0}\")]/parent::tr/td)[3]/div/label";
     }
 
     class WebClientLoginPageObjects
     {
-        //public string url = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/webclient/";
+        public string url = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/webclient/";
         public string UsernameInputbarId = "txtUsername";
         public string OkButtonXpath = "//input[@id=\"btnOK\"]";
         public string OkButtonOnNextPageXpath = "(//input[@class=\"btn btn-text btn-default\"])[2]";
@@ -96,7 +96,7 @@ namespace ERM.supportClasses
         public string QueueChangedXpath = "//div[@aria-disabled=\"false\"]/div/span[contains(text(),\"{0}\")]";
         public string AlreadyLoggedButtonId = "btnAlreadyLoggedInOK";
         //arbaz VM
-        public string url = "http://pkrd-akh-vcct1.vcc.bel.rd.eilab.biz/webclient/";
+        //public string url = "http://pkrd-akh-vcct1.vcc.bel.rd.eilab.biz/webclient/";
     }
 
 }
