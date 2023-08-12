@@ -43,6 +43,7 @@ namespace ERM.StepDefinitions
         [When(@"I enter credentials\.")]
         public void WhenIEnterCredentials_()
         {
+            Thread.Sleep(5000);
 
             try
             {   //wait for the element to be loaded

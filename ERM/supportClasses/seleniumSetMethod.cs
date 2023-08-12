@@ -11,6 +11,11 @@ using System;
 using TechTalk.SpecFlow;
 using FluentAssertions;
 using SeleniumExtras.WaitHelpers;
+using System.Reflection.Metadata.Ecma335;
+using FluentAssertions.Execution;
+using NUnit.Framework;
+using AngleSharp.Dom;
+
 namespace ConsoleApp1
 
 {
@@ -31,27 +36,30 @@ namespace ConsoleApp1
 
 
 
-        public static void EnterText( string element, ProperType elementType, string value, IWebDriver driver)
+        public static void EnterText(string element, ProperType elementType, string value, IWebDriver driver)
         {
             /*
              This method enters the value/text in the input bar.
              */
             if (elementType == ProperType.Id)
             {
-                
+                driver.FindElement(By.Id(element)).Clear();
                 driver.FindElement(By.Id(element)).SendKeys(value);
+
             }
             if (elementType == ProperType.Name)
             {
+                driver.FindElement(By.Name(element)).Clear();
                 driver.FindElement(By.Name(element)).SendKeys(value);
             }
             if (elementType == ProperType.X_Path)
             {
+                driver.FindElement(By.XPath(element)).Clear();
                 driver.FindElement(By.XPath(element)).SendKeys(value);
             }
         }
 
-        public static void Click( string element, ProperType elementType, IWebDriver driver) 
+        public static void Click(string element, ProperType elementType, IWebDriver driver)
         {
             /*
              This method clicks any clickable element.
@@ -91,7 +99,7 @@ namespace ConsoleApp1
                 string text = Text_WE.Text;
                 return text;
             }
-            else if(elementType == ProperType.X_Path)
+            else if (elementType == ProperType.X_Path)
             {
                 //return driver.FindElement(By.XPath(element)).Text;
                 IWebElement Text_WE = driver.FindElement(By.XPath(element));
@@ -105,7 +113,28 @@ namespace ConsoleApp1
             }
 
         }
-
+        public static string GetAttributeValue(string element, ProperType elementType, IWebDriver driver, string element_to_find_value)
+        {
+            if (elementType == ProperType.Id)
+            {
+                string element_value = driver.FindElement(By.Id(element)).GetAttribute(element_to_find_value);
+                return element_value;
+            }
+            if (elementType == ProperType.X_Path) 
+            {
+                string element_value = driver.FindElement(By.XPath(element)).GetAttribute(element_to_find_value);
+                return element_value;
+            }
+            if (elementType == ProperType.Name) 
+            {
+                string element_value = driver.FindElement(By.Name(element)).GetAttribute(element_to_find_value);
+                return element_value;
+            }
+            else
+            {
+                return "wrong element or unable to find value";
+            }
+        }
         public static void ExplicitWait(string element, ProperType elementType, IWebDriver driver)
         {
             if (elementType == ProperType.X_Path)
@@ -125,8 +154,70 @@ namespace ConsoleApp1
             }
         }
 
+        public static void CheckRadioBtn(string element, ProperType elementType, IWebDriver driver)
+        {
+            /*
+             This method clicks any clickable element.
+             */
+            
+            if (elementType == ProperType.Id && !driver.FindElement(By.Id(element)).Selected)
+            {
+                driver.FindElement(By.Id(element)).Click();
+                Console.WriteLine("check method 1");
+                SelectElement dropDown = new SelectElement(driver.FindElement(By.Id(element)));
+                dropDown.SelectByText(element);
 
-        public static void SelectDropDown( string element, ProperType elementType, string value, IWebDriver driver)
+            }
+            else if (elementType == ProperType.Name && !driver.FindElement(By.Name(element)).Selected)
+            {
+                driver.FindElement(By.Name(element)).Click();
+                Console.WriteLine("check method 2");
+
+            }
+            else if (elementType == ProperType.X_Path && !driver.FindElement(By.XPath(element)).Selected)
+            {
+                driver.FindElement(By.XPath(element)).Click();
+                Console.WriteLine("check method 3");
+
+            }
+            else
+            {
+                Assert.Fail();
+            }
+
+        }
+
+        public static void UncheckRadioBtn(string element, ProperType elementType, IWebDriver driver)
+        {
+            /*
+             This method clicks any clickable element.
+             */
+            Console.WriteLine("uncheck method");
+            //Console.WriteLine(driver.FindElement(By.Id(element)).Selected);
+
+            if (elementType == ProperType.Id && !(driver.FindElement(By.Id(element)).Selected))
+            {
+                driver.FindElement(By.Id(element)).Click();
+            }
+            else if (elementType == ProperType.Name && !(driver.FindElement(By.Name(element)).Selected))
+            {
+                driver.FindElement(By.Name(element)).Click();
+            }
+            else if (elementType == ProperType.X_Path && !(driver.FindElement(By.XPath(element)).Selected))
+            {
+                driver.FindElement(By.XPath(element)).Click();
+            }
+            else
+            {
+                Assert.Fail();
+            }
+
+        }
+
+
+
+
+        public static void SelectDropDown( string element, ProperType elementType, string value, IWebDriver driver, string dropDownText)
         {
             /*
                 This method select the drop down.
@@ -138,16 +229,21 @@ namespace ConsoleApp1
 
             if (elementType == ProperType.Id)
             {
-                new SelectElement(driver.FindElement(By.Id(element))).SelectByText(value);
+                SelectElement dropDown = new SelectElement(driver.FindElement(By.Id(element)));
+                dropDown.SelectByText(dropDownText);
             }
             if (elementType == ProperType.Name)
             {
-                new SelectElement(driver.FindElement(By.Name(element))).SelectByText(value);
+                SelectElement dropDown = new SelectElement(driver.FindElement(By.Name(element)));
+                dropDown.SelectByText(dropDownText);
             }
+        
             if (elementType == ProperType.X_Path)
             {
-                new SelectElement(driver.FindElement(By.XPath(element))).SelectByText(value);
-            }
+                SelectElement dropDown = new SelectElement(driver.FindElement(By.XPath(element)));
+        dropDown.SelectByText(dropDownText);
+            
+}
 
         }
 

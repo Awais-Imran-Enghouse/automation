@@ -2,11 +2,12 @@
 
 A short summary of the feature
 
-@tag1  
+@DeletingQueues
 Scenario: Login to VCC application
 	Given I am at VCC login page.
 	When I enter credentials.
 	Then I get logged in.
+
 
 Scenario: Login with wrong credentials
 	Given I am at VCC login page.

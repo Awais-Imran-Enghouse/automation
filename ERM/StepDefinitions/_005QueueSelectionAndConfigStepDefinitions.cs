@@ -116,12 +116,23 @@ namespace ERM.StepDefinitions
             
         }
 
-        [When(@"I check the change option for other queue")]
+        [When(@"I check the change option for Dummy Queue2")]
         public void WhenICheckTheChangeOptionForOtherQueue()
         {
-            string Xpath_Changed_Row = string.Format(ccSupportModuleObject.QueueChangedRadioButtonXpath, ccSupportModuleObject.QueueNamesList[1]);
-            seleniumSetMethod.Click(element: Xpath_Changed_Row, elementType: ProperType.X_Path, driver: driver);
             
+
+            //Taking value of for element
+            string add_dummy_agent = string.Format(ccSupportModuleObject.QueueChangedForElemenetTakerXpath, ccSupportModuleObject.QueueNamesList[1]);
+            string for_value_finder = driver.FindElement(By.XPath(add_dummy_agent)).GetAttribute("for");
+            Console.WriteLine("For value: " + for_value_finder);
+            //adjusting values of for and dummy agent name
+            string Xpath_Changed_Row = string.Format(ccSupportModuleObject.QueueChangedRadioButtonXpath, ccSupportModuleObject.QueueNamesList[1], for_value_finder);
+            Console.WriteLine("Xpath for Dummy agent 1 : " + Xpath_Changed_Row);
+            seleniumSetMethod.Click(element: Xpath_Changed_Row, elementType: ProperType.X_Path, driver: driver);
+
+
+            Thread.Sleep(3000);
+
         }
 
         [When(@"I click on the Ok button of Queue page\.")]

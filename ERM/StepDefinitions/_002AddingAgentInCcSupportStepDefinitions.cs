@@ -30,16 +30,59 @@ namespace ERM.StepDefinitions
             try
             {
                 Thread.Sleep(5000);
-                string agent = "";
+                //string agent = "";
                 seleniumSetMethod.ExplicitWait(element: homePageObjects.CCSupportXPath, elementType: ProperType.X_Path, driver: driver);
                 seleniumSetMethod.Click(element: homePageObjects.CCSupportXPath, elementType: ProperType.X_Path, driver: driver);
 
                 Thread.Sleep(10000);
-                //Hooks1 hooks1 = new Hooks1().DeletingAgent();
+                //seleniumSetMethod.ExplicitWait(element: ccSupportModuleObject.ListOfAgentsXpath, elementType: ProperType.X_Path, driver: driver);
+                //IList<IWebElement> all = driver.FindElements(By.XPath(ccSupportModuleObject.ListOfAgentsXpath));
+                //int sum = all.Count + 5;
+                //Console.WriteLine("Agent name is : " + agent);
+                ////Console.WriteLine("total agent is : " + all.Count + " " + sum);
+                //for (int i = 1; i <= all.Count; i++)
+                //{
+                //    string id = "tblVccGrid_row" + i + "_username";
+                //    string name;
+                //    string username = ccSupportModuleObject.Username;
+                //    name = seleniumSetMethod.GetText(element: id, ProperType.Id, driver: driver);
+                //    Console.WriteLine(name);
 
-                //seleniumSetMethod.ExplicitWait(element: "//tbody[@id='tblVccGrid_body']/tr", elementType: ProperType.X_Path, driver: driver);
+                //    if (name == username)
+                //    {
+                //        Console.WriteLine("User name is matched and is about to be deleted" + name);
+
+                //        seleniumSetMethod.Click(element: ccSupportModuleObject.AddedAgentXpath.Insert(19, ccSupportModuleObject.Username), ProperType.X_Path, driver: driver);
+                //        seleniumSetMethod.Click(element: ccSupportModuleObject.DeletingOkButtonXpath, ProperType.X_Path, driver: driver);
+                //    }
+                //}
+            }
+            catch (Exception e)
+            {
+                Assert.Fail(e.Message);
+            }
+
+        }
+
+        [When(@"I click on the User module\.")]
+        public void WhenIClickOnTheUserModule_()
+        {
+            seleniumSetMethod.ExplicitWait(element: ccSupportModuleObject.UserModuleId, elementType: ProperType.Id, driver: driver);
+            seleniumSetMethod.Click(element: ccSupportModuleObject.UserModuleId, elementType: ProperType.Id, driver: driver);
+
+        }
+
+
+
+
+        [When(@"I click on add user button\.")]
+        public void WhenIClickOnAddUserButton_()
+        {
+
+            try
+            {
+                string agent = "";
                 seleniumSetMethod.ExplicitWait(element: ccSupportModuleObject.ListOfAgentsXpath, elementType: ProperType.X_Path, driver: driver);
-                //IList<IWebElement> all = driver.FindElements(By.XPath("//tbody[@id='tblVccGrid_body']/tr"));
                 IList<IWebElement> all = driver.FindElements(By.XPath(ccSupportModuleObject.ListOfAgentsXpath));
                 int sum = all.Count + 5;
                 Console.WriteLine("Agent name is : " + agent);
@@ -60,27 +103,13 @@ namespace ERM.StepDefinitions
                         seleniumSetMethod.Click(element: ccSupportModuleObject.DeletingOkButtonXpath, ProperType.X_Path, driver: driver);
                     }
                 }
-            }
-            catch (Exception e)
-            {
-                Assert.Fail(e.Message);
-            }
 
-        }
-
-
-
-        [When(@"I click on add user button\.")]
-        public void WhenIClickOnAddUserButton_()
-        {
-            try
-            {
                 //seleniumSetMethod.ExplicitWait(element: ccSupportModuleObject.AddNewUserButtonId, elementType: ProperType.Id, driver: driver);
                 //seleniumSetMethod.Click(element: ccSupportModuleObject.AddNewUserButtonId, elementType: ProperType.Id, driver: driver);
-                //Thread.Sleep(10000);
+                Thread.Sleep(5000);
                 seleniumSetMethod.ExplicitWait(element: ccSupportModuleObject.AddNewUserButtonXpath, elementType: ProperType.X_Path, driver: driver);
                 seleniumSetMethod.Click(element: ccSupportModuleObject.AddNewUserButtonXpath, elementType: ProperType.X_Path, driver: driver);
-                Thread.Sleep(10000);
+                Thread.Sleep(5000);
             }
             catch (Exception e)
             {
