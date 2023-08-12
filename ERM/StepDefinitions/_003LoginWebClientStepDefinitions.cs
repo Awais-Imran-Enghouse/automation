@@ -23,7 +23,7 @@ namespace ERM.StepDefinitions
 
         }
         //Scenario 1
-        [Given(@"I am at the Web Clinet login page\.")]
+        [Given(@"I am at the Web Client login page\.")]
         public void GivenIAmAtTheWebClinetLoginPage_()
         {
             driver.Navigate().GoToUrl(webClientLoginPageObjects.url);
@@ -43,12 +43,26 @@ namespace ERM.StepDefinitions
         {
             seleniumSetMethod.Click(element:webClientLoginPageObjects.OkButtonXpath, elementType:ProperType.X_Path, driver:driver);
             Thread.Sleep(5000);
+            //seleniumSetMethod.Click(element: webClientLoginPageObjects.AlreadyLoggedButtonId, elementType: ProperType.Id, driver: driver);
+            try
+            {
+                seleniumSetMethod.Click(element: webClientLoginPageObjects.AlreadyLoggedButtonId, elementType: ProperType.Id, driver: driver);
+                
+            }
+            catch (Exception ex) { Console.WriteLine(ex); }
         }
 
         [When(@"I click on OK button again on webclient login page\.")]
         public void WhenIClickOnOKButtonAgain_()
         {
+            Thread.Sleep(3000);
             seleniumSetMethod.Click(element: webClientLoginPageObjects.OkButtonOnNextPageXpath, elementType: ProperType.X_Path, driver: driver);
+            Thread.Sleep(3000);
+            try
+            {
+                seleniumSetMethod.Click(element: webClientLoginPageObjects.NoInteractionYesXpath, ProperType.X_Path, driver: driver);
+            }
+            catch (Exception ex) { }
         }
 
 
@@ -61,7 +75,13 @@ namespace ERM.StepDefinitions
             }
             catch (Exception ex) { }
 
-            Thread.Sleep(5000);
+            Thread.Sleep(10000);
+            seleniumSetMethod.ExplicitWait(element: webClientLoginPageObjects.AgentNameXpath, ProperType.X_Path, driver: driver);
+            string name = seleniumSetMethod.GetText(element: webClientLoginPageObjects.AgentNameXpath, ProperType.X_Path, driver: driver);
+            Console.WriteLine(name);
+            Assert.IsTrue(name.Contains(ccSupportModuleObject.Username));
+            //name.Contains(ccSupportModuleObject.Username);
+        
         }
         //Scenario 2
         [When(@"When I enter ""([^""]*)""\.")]

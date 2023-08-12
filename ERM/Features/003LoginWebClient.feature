@@ -17,16 +17,16 @@ Scenario: Adding user in CCSupport.
 
 
 #@DeletingAgent
-Scenario: Login to the CC from Web client with correct credentials
-	Given I am at the Web Clinet login page.
+Scenario: Login to the Web client with correct credentials
+	Given I am at the Web Client login page.
 	When When I enter username.
 	And I click on OK button on webclient login page.
 	And I click on OK button again on webclient login page.
 	Then I get logged in web client.
 
 
-Scenario: Login to the CC from Web client with wrong credentials
-	Given I am at the Web Clinet login page.
+Scenario: Login to the Web client with wrong credentials
+	Given I am at the Web Client login page.
 	When When I enter "wrong username".
-	And I click on OK button.
+	And I click on OK button on webclient login page.
 	Then I get text "Error".

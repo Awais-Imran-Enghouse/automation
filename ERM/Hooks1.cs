@@ -26,9 +26,9 @@ namespace ERM
         CCSuportModuleObjects ccSupportModuleObject = new CCSuportModuleObjects();
         ApplicationFixtures applicationFixtures = new ApplicationFixtures();
         // taken
-        //static readonly IWebDriver driver ;
+        
         private readonly IObjectContainer _container;
-        //private readonly IWebDriver driver;
+        
         public Hooks1(IObjectContainer container)
         {
             _container = container;
@@ -119,7 +119,37 @@ namespace ERM
             //}
             var driver = _container.Resolve<IWebDriver>();
             //var driver = _container.Resolve<IWebDriver>();
-            string url = driver.Url;
+            //string url = driver.Url;
+            string url = ccSupportModuleObject.QueueModuleUrl;
+            foreach (var names in ccSupportModuleObject.QueueNamesList)
+            {
+                Console.WriteLine($"Into the After Feature scenario{names}");
+                try
+                {
+                    applicationFixtures.DeletingRow(allListFinderElement: ccSupportModuleObject.QueueListXpath, driver: driver, nameSuffixIdPart: "_name", deleteSuffixIdPart: "_delete", nameToDelRow: names, okButtonXpath: ccSupportModuleObject.QueueDelOkButtonXpath, url: url);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+            }
+        }
+
+        [BeforeScenario("@DeletingQueuesBeforeScenario", Order = 1)]
+        public void CallingDelRowBeforeScenario()
+        {
+            CCSuportModuleObjects ccSupportModuleObject = new CCSuportModuleObjects();
+            ApplicationFixtures applicationFixtures = new ApplicationFixtures();
+
+            //public _005QueueSelectionAndConfigStepDefinitions(IWebDriver driver)
+            //{
+            //    this.driver = driver;
+
+            //}
+            var driver = _container.Resolve<IWebDriver>();
+            //var driver = _container.Resolve<IWebDriver>();
+            //string url = driver.Url;
+            string url = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=76cf08c6-f261-4202-a96b-0c07b4254aca&uc=Queues";
             foreach (var names in ccSupportModuleObject.QueueNamesList)
             {
                 Console.WriteLine($"Into the After Feature scenario{names}");

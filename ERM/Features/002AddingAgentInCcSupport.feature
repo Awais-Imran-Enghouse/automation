@@ -2,12 +2,13 @@
 
 A short summary of the feature
 
-@DeletingAgent
+#@DeletingAgent
 Scenario: Adding user in CCSupport.
 	Given I am at VCC login page.
 	When I enter credentials.
 	Then I get logged in.
 	When I click on CCSupport.
+	And I click on the User module.
 	When I click on add user button.
 	When I enter Username.
 	And I enter Email Address.
