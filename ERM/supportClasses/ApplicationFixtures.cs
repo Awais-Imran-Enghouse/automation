@@ -23,10 +23,11 @@ namespace ERM.supportClasses
         {
             driver.Navigate().GoToUrl(url);      
             Thread.Sleep(5000);
+            seleniumSetMethod.ExplicitWait(element: allListFinderElement, elementType: ProperType.X_Path, driver: driver);
             string agent = "";
             IList<IWebElement> all = driver.FindElements(By.XPath(allListFinderElement));
             int sum = all.Count + 5;
-            Console.WriteLine("Agent name is : " + agent);
+            Console.WriteLine($"total queues are :  {all.Count}");
             //Console.WriteLine("total agent is : " + all.Count + " " + sum);
             for (int i = 1; i <= all.Count; i++)
             {
@@ -34,7 +35,7 @@ namespace ERM.supportClasses
                 string name;
                 string nameToDelRow_ = nameToDelRow;
                 name = seleniumSetMethod.GetText(element: id, ProperType.Id, driver: driver);
-                Console.WriteLine(name);
+                Console.WriteLine($" Name to del row {name}");
 
                 if (name == nameToDelRow)
                 {

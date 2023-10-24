@@ -2,7 +2,7 @@
 
 A short summary of the feature
 
-@DeletingQueues
+@DeletingQueues @DeletingAgent
 Scenario: 001 Verification of Log Off button and pause button.
 	
 	# creating ist queu:
@@ -38,7 +38,7 @@ Scenario: 001 Verification of Log Off button and pause button.
 	When I enter Username.
 	And I enter Email Address.
 	And I click on the profile tab.
-	And I click the OK button.
+	And I click the OK button on the profile tab.
 	Then The agent is successfully created.
 	When I click on the edit button of the agent we created.
 	When I click on the Queue Tab.
@@ -96,5 +96,5 @@ Scenario: 001 Verification of Log Off button and pause button.
 	And I unchecked 'Dummy Queue2' on Change Interaction popup.
 	And I click on the ok button of Change Interaction pop up.
 	Then I get the warning message.
-#	
+
 	

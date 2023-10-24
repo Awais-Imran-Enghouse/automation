@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.CodeCoverage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -90,13 +91,24 @@ namespace ERM.supportClasses
         public string ActivityMonitorChkBoxXpath = "//label[@for=\"Permission2\"]";
         public string WaitingMonitorChkBoxXpath = "//label[@for=\"Permission3\"]";
         public string PermissionTabOkButtonId = "btnSave";
+        public string SkillsTabId = "ui-id-4";
+        public string SupportChkBoxSkilPageXpath = "//label[@for=\"ckbSkill1\"]";
+        public string SkilPageOkBtnId = "btnSave";
+        public string SkillTabId = "ui-id-4";
+        public string SupportCheckBoxXpath = "//input[@aria-label=\"Support\"]/following-sibling::label";
+        public string SkillTabOkBtnId = "btnSave";
+        public string VoxAgentChkBoxXpath = "//input[@id=\"ckbProfile3_UserID6\"]/following-sibling::label";
+        public string QueueInboundEmailSelectedXpath = "(//td[contains(text(),\"{0}\")]/parent::tr/td)[8]/div/label[@for=\"ckbQueueSelected8_InteractionID3_UserID6\"]";
+        public string LogoutArrowXpath = "//span[@class=\"caret caret-left\"]";
+        public string LogoutXpath = "//ul[@class=\"dropdown-menu\"]/li/a[contains(text(),\"Log off\")]";
+
         //arbaz VM
         //public string url = "http://pkrd-akh-vcct1.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=20fcce3b-d8c3-41f8-a62b-531b79189c22&uc=Users";
         //public string QueueSelectedRadioButtonXpath = "(//td[contains(text(),\"{0}\")]/parent::tr/td)[2]/div/label";
         //public string QueueChangedRadioButtonXpath = "(//td[contains(text(),\"{0}\")]/parent::tr/td)[3]/div/label";
     }
 
-    class ERM
+    class ErmModuleObjects
     {
         public string ErmModuleXpath = "(//td[@aria-label=\"Email response management\"]/following-sibling::td)[1]/a";
         public string MailBoxesTabId = "ERM_01_MessageBoxes";
@@ -108,18 +120,26 @@ namespace ERM.supportClasses
         public string ApplyNewEmailChkBoxXpath = "//div[@class=\"vcc-checkbox\"]/label[@for=\"ckbApplyToNew\"]";
         public string CndtnPopUpNextBtnXpath = "(//input[@value=\"Next\"])[3]";
         public string AddNewConditionBtnXpath = "//span[contains(text(), \"Add condition\")]";
-        public string AddCndtnFrstDrpDwnXpath = "//select[@class=\"stretch-h valid\"]";
+        public string AddCndtnFrstDrpDwnXpath = "//*[@id=\"dialogRuleWizard\"]/div[4]/div/div/div[1]/div[1]/select";
         public string OptionSubjectText = "Subject";
-        public string AddCndtnScndDrpDwnXpath = "(//select[@class=\"stretch-h\"])[1]";
+        public string AddCndtnScndDrpDwnXpath = "//*[@id=\"dialogRuleWizard\"]/div[4]/div/div/div[1]/div[2]/select";
         public string OptionContainsText = "Contains";
         public string AddCndtnPopUpInputBarId = "txtConditionValue";
         public string AddCndtnOkBtnXpath = "(//input[@value=\"Ok\"])[2]";
+        public string ConditionWindowNextBtnXpath = "(//input[@value=\"Next\"])[3]";
         public string AddActionBtnOnActionPopUpXpath = "//span[contains(text(),\"Add action\")]";
-        public string SelectActionDropDownXpath = "//select[@class=\"valid\"]";
+        public string SelectActionDropDownXpath = "//*[@id=\"dialogRuleWizard\"]/div[6]/div/div/div[1]/div[2]/select";
         public string OptionAssignQText = "Assign to queue";
         public string QueueDropDownId = "QUEUE";
         public string AddActionOkBtnXpath = "(//input[@value=\"Ok\"])[2]";
-
+        //public string ActionQueueDropDown = "(//select/option[@value=\"Dummy Queue2\"])[2]";
+        public string ActionQueueDropDown = "(//select/option[@value=\"{0}\"])[2]";
+        public string ActionPopUpNextBtnXpath = "(//input[@value=\"Update\"])[1]";
+        public string MailBoxUrl = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=cc020297-0f13-467f-9ebc-260a585b8145&uc=MessageBoxes";
+        public string DummyQueueRoutngRuleXpath = "//li[@id=\"j1_3\"]/a";
+        public string DummyQueueRoutngRuleRemoveXpath = "(//ul[@class=\"vakata-context jstree-contextmenu jstree-default-contextmenu\"]/li)[3]";
+        public string DummyQueueRuleDletionOkBtnXpath = "(//div[@class=\"ui-dialog-buttonset\"]/button)[5]";
+        public string RoutingRulesOkBtnId = "btnSave";
     }
 
     class WebClientLoginPageObjects
@@ -159,6 +179,7 @@ namespace ERM.supportClasses
         public string AgentNameXpath = "(//div[@class=\"title\"]/span)[2]";
         public string DummyQueue1Xpath = "//div[@class=\"checkbox\"]/label[@for=\"chkQueue7\"]";
         public string DummyQueue2Xpath = "//div[@class=\"checkbox\"]/label[@for=\"chkQueue8\"]";
+        public string DummyQueue2XpathSelectChk = "//*[@id=\"chkQueue8\"]";
         public string PauseBtnId = "btnPauseSubMenu";
         public string TrueVal = "true";
         public string ChangeInteractionBtnId = "btnQueues";
@@ -171,6 +192,12 @@ namespace ERM.supportClasses
         public string WaitingMonittorBtnId = "btnWaitingMonitor";
         public string ActivityMonitorCloseBtnXpath = "//span[@id=\"ui-id-8\"]/following-sibling::button[@title=\"close\"]";
         public string WaitingMonitorCloseBtnXpath = "//span[@id=\"ui-id-7\"]/following-sibling::button[@title=\"close\"]";
+        public string AcceptEmailBtnXpath = "//div[@id=\"divContent\"]/div[@id=\"divContactInformation\"]/div[4]/div/input[1]";
+        public string MarkAsHandledBtnXpath = "//*[@id=\"divInteraction\"]/div[1]/input[5]";
+        public string RemarkInputBarId = "remarkPlain";
+        public string EmailHandledCommitBtnXpath = "(//input[@title=\"Commit (Alt + Shift + Q)\"])[1]";
+        public string EmailDelBtnXpath = "//input[@aria-label=\"Delete email (Alt + Shift + X)\"]";
+        public string EmailDelCommitBtnXpath = "(//input[@title=\"Commit (Alt + Shift + Q)\"])[4]";
         public IDictionary<string, string> ElementValuesDic = new Dictionary<string, string>()
         {
             {"class","btn-toolbar-pause active" },

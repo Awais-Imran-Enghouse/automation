@@ -1,3 +1,4 @@
+using AngleSharp.Dom;
 using ConsoleApp1;
 using ERM.supportClasses;
 using NUnit.Framework;
@@ -78,8 +79,23 @@ namespace ERM.StepDefinitions
             }
             if (p0 == "Dummy Queue2")
             {
-                Thread.Sleep(3000);
-                seleniumSetMethod.Click(element: webClientLoginPageObjects.DummyQueue2Xpath, elementType: ProperType.X_Path, driver: driver);
+                Thread.Sleep(5000);
+                //seleniumSetMethod.Click(element: webClientLoginPageObjects.DummyQueue2Xpath, elementType: ProperType.X_Path, driver: driver);
+                //seleniumSetMethod.CheckRadioBtn(element: webClientLoginPageObjects.DummyQueue2Xpath, elementType: ProperType.X_Path, driver: driver);
+                //seleniumSetMethod.CheckRadioBtn(element: "//*[@id=\"chkQueue8\"]", elementType: ProperType.X_Path, driver: driver);
+                //bool checked_ = driver.FindElement(By.XPath("//*[@id=\"chkQueue8\"]")).Selected;
+                //bool checked_ = seleniumSetMethod.SelectOrNot(element: "//*[@id=\"chkQueue8\"]", elementType: ProperType.X_Path, driver: driver);
+                bool checked_ = seleniumSetMethod.SelectOrNot(element: webClientLoginPageObjects.DummyQueue2XpathSelectChk, elementType: ProperType.X_Path, driver: driver);
+                if (!checked_)
+                //if (true)
+                {
+                    Console.WriteLine("Is it selected? ", !checked_);
+                    Console.WriteLine(!checked_);
+                    //driver.FindElement(By.XPath("//div[@class=\"checkbox\"]/label[@for=\"chkQueue8\"]")).Click();
+                    seleniumSetMethod.Click(element: webClientLoginPageObjects.DummyQueue2Xpath, elementType: ProperType.X_Path, driver: driver);
+
+                }
+                Thread.Sleep(5000);
             }
 
         }

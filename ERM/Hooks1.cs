@@ -12,18 +12,22 @@ using TechTalk.SpecFlow;
 using WebDriverManager.DriverConfigs.Impl;
 using WebDriverManager;
 using ERM.StepDefinitions;
+using OpenQA.Selenium.Interactions;
+using System.Linq.Expressions;
+//using OpenQA.Selenium.We
 
 namespace ERM
 {
     [Binding]
     //[TestFixture]
     //[AllureNUnit]
-    public sealed class Hooks1
+    public sealed class Hooks1 
     {
         // taking files in
         loginPageObjects loginObjects = new loginPageObjects();
         HomePageObjects homePageObjects = new HomePageObjects();
         CCSuportModuleObjects ccSupportModuleObject = new CCSuportModuleObjects();
+        ErmModuleObjects ermModuleObjects = new ErmModuleObjects();
         ApplicationFixtures applicationFixtures = new ApplicationFixtures();
         // taken
         
@@ -103,9 +107,12 @@ namespace ERM
             }
             Thread.Sleep(10000);
 
+            //Testing
+            //new Actions(driver)
+            //   .MoveToElement();
+
         }
-        //[BeforeScenario("@DeletingQueues")]
-        //[AfterFeature("@DeletingQueues")]
+        
         [AfterScenario("@DeletingQueues", Order = 1)]
         public void CallingDelRow()
         {
@@ -135,39 +142,162 @@ namespace ERM
             }
         }
 
-        [BeforeScenario("@DeletingQueuesBeforeScenario", Order = 1)]
-        public void CallingDelRowBeforeScenario()
+        [BeforeScenario("@DeletingQueuesBS", Order = 1)]
+        public void CallingDelRowBS()
         {
             CCSuportModuleObjects ccSupportModuleObject = new CCSuportModuleObjects();
             ApplicationFixtures applicationFixtures = new ApplicationFixtures();
+            var driver = _container.Resolve<IWebDriver>();
 
-            //public _005QueueSelectionAndConfigStepDefinitions(IWebDriver driver)
+            //try
             //{
-            //    this.driver = driver;
+            //    //wait for the element to be loaded
+            //    driver.Navigate().GoToUrl(loginObjects.url);
+            //    seleniumSetMethod.ExplicitWait(element: loginObjects.UsernameInputbarId, elementType: ProperType.Id, driver: driver);
+            //    //further automation process
+            //    seleniumSetMethod.EnterText(element: loginObjects.UsernameInputbarId, elementType: ProperType.Id, value: loginObjects.Username, driver: driver);
+            //    seleniumSetMethod.EnterText(element: loginObjects.PasswordInputbarId, elementType: ProperType.Id, value: loginObjects.Password, driver: driver);
+            //    seleniumSetMethod.Click(element: loginObjects.SubmitButtonXpath, elementType: ProperType.X_Path, driver: driver);
+
 
             //}
-            var driver = _container.Resolve<IWebDriver>();
-            //var driver = _container.Resolve<IWebDriver>();
-            //string url = driver.Url;
-            string url = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=76cf08c6-f261-4202-a96b-0c07b4254aca&uc=Queues";
+            //catch { }
+           
+           
+            string url = ccSupportModuleObject.QueueModuleUrl;
             foreach (var names in ccSupportModuleObject.QueueNamesList)
             {
                 Console.WriteLine($"Into the After Feature scenario{names}");
                 try
                 {
-                    applicationFixtures.DeletingRow(allListFinderElement: ccSupportModuleObject.QueueListXpath, driver: driver, nameSuffixIdPart: "_username", deleteSuffixIdPart: "_delete", nameToDelRow: names, okButtonXpath: ccSupportModuleObject.QueueDelOkButtonXpath, url: url);
+                    applicationFixtures.DeletingRow(allListFinderElement: ccSupportModuleObject.QueueListXpath, driver: driver, nameSuffixIdPart: "_name", deleteSuffixIdPart: "_delete", nameToDelRow: names, okButtonXpath: ccSupportModuleObject.QueueDelOkButtonXpath, url: url);
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e);
                 }
             }
+            seleniumSetMethod.Click(element: ccSupportModuleObject.LogoutArrowXpath, elementType: ProperType.X_Path, driver: driver);
+            seleniumSetMethod.Click(element: ccSupportModuleObject.LogoutXpath, elementType: ProperType.X_Path, driver: driver);
+
+        }
+
+        [BeforeScenario("@DeletingQueuesBeforeScenario", Order = 1)]
+        public void CallingDelRowBeforeScenario()
+        {
+            CCSuportModuleObjects ccSupportModuleObject = new CCSuportModuleObjects();
+            ApplicationFixtures applicationFixtures = new ApplicationFixtures();
+            var driver = _container.Resolve<IWebDriver>();
+
+            try
+            {
+
+                //wait for the element to be loaded
+                driver.Navigate().GoToUrl(loginObjects.url);
+                seleniumSetMethod.ExplicitWait(element: loginObjects.UsernameInputbarId, elementType: ProperType.Id, driver: driver);
+                //further automation process
+                seleniumSetMethod.EnterText(element: loginObjects.UsernameInputbarId, elementType: ProperType.Id, value: loginObjects.Username, driver: driver);
+                seleniumSetMethod.EnterText(element: loginObjects.PasswordInputbarId, elementType: ProperType.Id, value: loginObjects.Password, driver: driver);
+                seleniumSetMethod.Click(element: loginObjects.SubmitButtonXpath, elementType: ProperType.X_Path, driver: driver);
+
+                string url = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=76cf08c6-f261-4202-a96b-0c07b4254aca&uc=Queues";
+                foreach (var names in ccSupportModuleObject.QueueNamesList)
+                {
+                    Console.WriteLine($"Into the After Feature scenario{names}");
+                    try
+                    {
+                        applicationFixtures.DeletingRow(allListFinderElement: ccSupportModuleObject.QueueListXpath, driver: driver, nameSuffixIdPart: "_name", deleteSuffixIdPart: "_delete", nameToDelRow: names, okButtonXpath: ccSupportModuleObject.QueueDelOkButtonXpath, url: url);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                    }
+                }
+                seleniumSetMethod.Click(element: ccSupportModuleObject.LogoutArrowXpath, elementType: ProperType.X_Path, driver: driver);
+                seleniumSetMethod.Click(element: ccSupportModuleObject.LogoutXpath, elementType: ProperType.X_Path, driver: driver);
+
+            }
+            catch (Exception e) { Console.WriteLine(e.ToString()); }
+               
+            //var driver = _container.Resolve<IWebDriver>();
+            //string url = driver.Url;
+            //string url = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=76cf08c6-f261-4202-a96b-0c07b4254aca&uc=Queues";
+            //foreach (var names in ccSupportModuleObject.QueueNamesList)
+            //{
+            //    Console.WriteLine($"Into the After Feature scenario{names}");
+            //    try
+            //    {
+            //        applicationFixtures.DeletingRow(allListFinderElement: ccSupportModuleObject.QueueListXpath, driver: driver, nameSuffixIdPart: "_username", deleteSuffixIdPart: "_delete", nameToDelRow: names, okButtonXpath: ccSupportModuleObject.QueueDelOkButtonXpath, url: url);
+            //    }
+            //    catch (Exception e)
+            //    {
+            //        Console.WriteLine(e);
+            //    }
+            //}
         }
 
 
+        [AfterScenario("@DeletingRoutingRules",Order = 2)]
+        public void DeletingRoutingRules()
+        {
+            var driver = _container.Resolve<IWebDriver>();
+            try
+            {
+                driver.Navigate().GoToUrl(loginObjects.url);
+                Console.WriteLine("Open Url");
+                try { 
+                
+                    //wait for the element to be loaded
+                    seleniumSetMethod.ExplicitWait(element: loginObjects.UsernameInputbarId, elementType: ProperType.Id, driver: driver);
+                    //further automation process
+                    seleniumSetMethod.EnterText(element: loginObjects.UsernameInputbarId, elementType: ProperType.Id, value: loginObjects.Username, driver: driver);
+                    seleniumSetMethod.EnterText(element: loginObjects.PasswordInputbarId, elementType: ProperType.Id, value: loginObjects.Password, driver: driver);
+                    seleniumSetMethod.Click(element: loginObjects.SubmitButtonXpath, elementType: ProperType.X_Path, driver: driver);
 
+                    seleniumSetMethod.ExplicitWait(element: ermModuleObjects.ErmModuleXpath, elementType: ProperType.X_Path, driver: driver);
+                    seleniumSetMethod.Click(element: ermModuleObjects.ErmModuleXpath, elementType: ProperType.X_Path, driver: driver);
 
-        [AfterScenario(Order = 2)]
+                    seleniumSetMethod.ExplicitWait(element: ermModuleObjects.MailBoxesTabId, elementType: ProperType.Id, driver: driver);
+                    seleniumSetMethod.Click(element: ermModuleObjects.MailBoxesTabId, elementType: ProperType.Id, driver: driver);
+                }
+                catch (Exception e)
+                { 
+                    Console.WriteLine(e.ToString());
+                }
+                    string url = driver.Url;
+                    applicationFixtures.EditRow(allListFinderElement: ccSupportModuleObject.QueueListXpath, driver: driver, nameSuffixIdPart: "_name", nameToEditRow: "Support", editSuffixIdPart: ccSupportModuleObject.AgentEditSuffixIdPart, url: ermModuleObjects.MailBoxUrl);
+
+                    seleniumSetMethod.ExplicitWait(element: ermModuleObjects.RoutingRulesTabId, elementType: ProperType.Id, driver: driver);
+                    seleniumSetMethod.Click(element: ermModuleObjects.RoutingRulesTabId, elementType: ProperType.Id, driver: driver);
+                    Thread.Sleep(2000);
+                    Console.WriteLine("clicked on routing rules");
+                //right click
+                seleniumSetMethod.ExplicitWait(element: ermModuleObjects.DummyQueueRoutngRuleXpath, elementType: ProperType.X_Path, driver: driver);
+                seleniumSetMethod.RightClick(element: ermModuleObjects.DummyQueueRoutngRuleXpath, elementType: ProperType.X_Path, driver: driver);
+
+                // removing
+                seleniumSetMethod.ExplicitWait(element: ermModuleObjects.DummyQueueRoutngRuleRemoveXpath, elementType: ProperType.X_Path, driver: driver);
+                seleniumSetMethod.Click(element: ermModuleObjects.DummyQueueRoutngRuleRemoveXpath, elementType: ProperType.X_Path, driver: driver);
+                //Thread.Sleep(2000);
+                seleniumSetMethod.ExplicitWait(element: ermModuleObjects.DummyQueueRuleDletionOkBtnXpath, elementType: ProperType.X_Path, driver: driver);
+                seleniumSetMethod.Click(element: ermModuleObjects.DummyQueueRuleDletionOkBtnXpath, elementType: ProperType.X_Path, driver: driver);
+                
+                seleniumSetMethod.ExplicitWait(element: ermModuleObjects.RoutingRulesOkBtnId, elementType: ProperType.Id, driver: driver);
+
+                seleniumSetMethod.Click(element: ermModuleObjects.RoutingRulesOkBtnId, elementType: ProperType.Id, driver: driver);
+
+                Thread.Sleep(2000);
+                Console.WriteLine("Dummy queue rule deleted");
+
+            }
+            catch (Exception e)
+            {
+                //Assert.Fail(e.Message);
+                Console.WriteLine("didn't click  on routing rules");
+            }
+        }
+
+        [AfterScenario(Order = 3)]
         public void AfterScenario()
         {
             //TODO: implement logic that has to run after executing each scenario

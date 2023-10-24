@@ -2,7 +2,7 @@
 
 A short summary of the feature
 
-@tag1
+@DeletingAgent
 Scenario: 001 Verification of Activity Monitor feature.
 	#1:Creation of agent and assigment of queus.
 	Given I am at VCC login page.
@@ -13,7 +13,7 @@ Scenario: 001 Verification of Activity Monitor feature.
 	When I enter Username.
 	And I enter Email Address.
 	And I click on the profile tab.
-	And I click the OK button.
+	And I click the OK button on the profile tab.
 	Then The agent is successfully created.
 	When I click on the edit button of the agent we created.
 	And I click the permission tab.
@@ -27,6 +27,7 @@ Scenario: 001 Verification of Activity Monitor feature.
 	When I click on the Activity Monitor button in webclient.
 	And I close the Activity Monitor tab.
 
+@DeletingAgent
 Scenario: 002 Verification of Waiting Monitor feature.
 	#1:Creation of agent and assigment of queus.
 	Given I am at VCC login page.
@@ -37,7 +38,7 @@ Scenario: 002 Verification of Waiting Monitor feature.
 	When I enter Username.
 	And I enter Email Address.
 	And I click on the profile tab.
-	And I click the OK button.
+	And I click the OK button on the profile tab.
 	Then The agent is successfully created.
 	When I click on the edit button of the agent we created.
 	And I click the permission tab.
@@ -51,5 +52,14 @@ Scenario: 002 Verification of Waiting Monitor feature.
 	When I click on the Waiting Monitor button.
 	And I close the Waiting Monitor tab.
 
+	# When email is still not accepted.
+	# activity monitor status column will have transfering status
+	# When email will be accepted
+	# activity monitor status column will have conversation status
+	# queue column will have the name of queue with which user is logged in
+	# uncheck show log off agent, it will show only an agent which is logged in
+	# uncheck busy agent, it will only show the logged off agent, on checking it, it will show the logged in agent
+
+	#putting email on hold
 
 

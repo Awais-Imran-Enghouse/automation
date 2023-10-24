@@ -1,9 +1,9 @@
-﻿Feature: 009HandlingMails
+﻿Feature: 010WaitingMonitorActivityMonitorWithEmails
 
 A short summary of the feature
 
-@DeletingRoutingRules @DeletingQueues @DeletingAgent
-Scenario: 001 Verification of Sending and Receiving Emails.
+#@DeletingRoutingRules @DeletingQueues @DeletingAgent
+Scenario: 001 .
 #	
 
 	#adding queue
@@ -19,7 +19,7 @@ Scenario: 001 Verification of Sending and Receiving Emails.
 	When I check on the Voxtron Agent checkbox.
 	When I click on the Ok button.
 
-	#......
+	#adding second queue
 	Given I am at VCC login page.
 	#When I enter credentials.
 	#Then I get logged in.
@@ -31,8 +31,10 @@ Scenario: 001 Verification of Sending and Receiving Emails.
 	When I check on the Voxtron Agent checkbox.
 	When I click on the Ok button. 
 
-	#adding agent
+	#1:Creation of agent and assigment of queus.
 	Given I am at VCC login page.
+	#When I enter credentials.
+	#Then I get logged in.
 	When I click on CCSupport.
 	And I click on the User module.
 	When I click on add user button.
@@ -41,6 +43,12 @@ Scenario: 001 Verification of Sending and Receiving Emails.
 	And I click on the profile tab.
 	And I click the OK button on the profile tab.
 	Then The agent is successfully created.
+	When I click on the edit button of the agent we created.
+	And I click the permission tab.
+	And I check the Enable activity monitor.
+	And I check the Enable waiting monitor.
+	And I click the OK button on permission tab.
+	
 
 	##assigning Routing Rules to queue
 	Given I am at VCC login page.
@@ -82,30 +90,15 @@ Scenario: 001 Verification of Sending and Receiving Emails.
 
 #	#sending emails
 	Given I send email from 'customer@voxtron.lab' to 'support@voxtron.lab'.
-###
-###	#receiving Email and Marking as Handled
+	
+	#logging in to webclient
 	Given I am at the Web Client login page.
 	When When I enter username.
 	And I click on OK button on webclient login page.
 	When I checked 'Dummy Queue2'.
 	And I click on OK button again on webclient login page.
 	Then I get logged in web client.
-	And I click the Accept button.
-	And I click on the Mark As Handled button.
-	And I enter comments 'Email has been handled' in the Remarks input bar.
-	And I click on commit button to handle the email.
-
-#	#sending emails
-	Given I send email from 'customer@voxtron.lab' to 'support@voxtron.lab'.
-
-	#receiving Email and Marking as Deleted
-	Given I am at the Web Client login page.
-	When When I enter username.
-	And I click on OK button on webclient login page.
-	When I checked 'Dummy Queue2'.
-	And I click on OK button again on webclient login page.
-	Then I get logged in web client.
-	And I click the Accept button.
-	And I click on the Delete button.
-	And I enter comments 'Email has been deleted' in the Remarks input bar.
-	And I click on commit button to del the email.
+	When I click on the Activity Monitor button in webclient.
+	And I close the Activity Monitor tab.
+	When I click on the Waiting Monitor button.
+	And I close the Waiting Monitor tab.

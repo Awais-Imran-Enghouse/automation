@@ -76,10 +76,12 @@ namespace ERM.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("001 Verification of Log Off button and pause button.")]
         [NUnit.Framework.CategoryAttribute("DeletingQueues")]
+        [NUnit.Framework.CategoryAttribute("DeletingAgent")]
         public virtual void _001VerificationOfLogOffButtonAndPauseButton_()
         {
             string[] tagsOfScenario = new string[] {
-                    "DeletingQueues"};
+                    "DeletingQueues",
+                    "DeletingAgent"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("001 Verification of Log Off button and pause button.", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 6
@@ -178,7 +180,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("I click on the profile tab.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 41
- testRunner.And("I click the OK button.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I click the OK button on the profile tab.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 42
  testRunner.Then("The agent is successfully created.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
