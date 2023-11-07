@@ -1,4 +1,5 @@
-﻿Feature: 003LoginWebClient
+﻿@003LoginWebClient
+Feature: 003LoginWebClient
 
 A short summary of the feature
 
@@ -12,7 +13,7 @@ Scenario: Adding user in CCSupport.
 	When I enter Username.
 	And I enter Email Address.
 	And I click on the profile tab.
-	And I click the OK button.
+	And I click the OK button on the profile tab.
 	Then The agent is successfully created.
 
 
