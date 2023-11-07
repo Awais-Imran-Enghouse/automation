@@ -17,7 +17,7 @@ Scenario: Adding user in CCSupport.
 	Then The agent is successfully created.
 
 
-#@DeletingAgent
+##@DeletingAgent
 Scenario: Login to the Web client with correct credentials
 	Given I am at the Web Client login page.
 	When When I enter username.
