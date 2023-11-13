@@ -81,8 +81,8 @@ namespace ERM.StepDefinitions
         [When(@"I close the Waiting Monitor tab\.")]
         public void WhenICloseTheWaitingMonitorTab_()
         {
-            seleniumSetMethod.ExplicitWait(element: webClientLoginPageObjects.WaitingMonittorBtnId, elementType: ProperType.Id, driver: driver);
-            seleniumSetMethod.Click(element: webClientLoginPageObjects.WaitingMonittorBtnId, elementType: ProperType.Id, driver: driver);
+            seleniumSetMethod.ExplicitWait(element: webClientLoginPageObjects.WaitingMonitorCloseBtnXpath, elementType: ProperType.X_Path, driver: driver);
+            seleniumSetMethod.Click(element: webClientLoginPageObjects.WaitingMonitorCloseBtnXpath, elementType: ProperType.X_Path, driver: driver);
         }
     }
 }

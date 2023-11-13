@@ -4,12 +4,12 @@ A short summary of the feature
 
 
 Scenario: Access to setting icon of WebClient.
-	Given I am at the Web Clinet login page.
+	Given I am at the Web Client login page.
 	When I click on the setting icon.
 	Then A new Iframe with heading "Settings" is appeared.
 
 Scenario: Multiple language selection check.
-	Given I am at the Web Clinet login page.
+	Given I am at the Web Client login page.
 	When I click on the setting icon.
 	When I select <Language> from drop down.
 	Then I get <UsernameText> in <Language> language.

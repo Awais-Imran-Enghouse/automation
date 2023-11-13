@@ -191,7 +191,7 @@ namespace ERM.supportClasses
         public string ActivityyMonitorBtnId = "btnActivityMonitor";
         public string WaitingMonittorBtnId = "btnWaitingMonitor";
         public string ActivityMonitorCloseBtnXpath = "//span[@id=\"ui-id-8\"]/following-sibling::button[@title=\"close\"]";
-        public string WaitingMonitorCloseBtnXpath = "//span[@id=\"ui-id-7\"]/following-sibling::button[@title=\"close\"]";
+        public string WaitingMonitorCloseBtnXpath = "(//button[@title=\"close\"])[1]";
         public string AcceptEmailBtnXpath = "//div[@id=\"divContent\"]/div[@id=\"divContactInformation\"]/div[4]/div/input[1]";
         public string MarkAsHandledBtnXpath = "//*[@id=\"divInteraction\"]/div[1]/input[5]";
         public string RemarkInputBarId = "remarkPlain";

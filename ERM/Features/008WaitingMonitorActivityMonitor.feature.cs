@@ -21,12 +21,14 @@ namespace ERM.Features
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("008WaitingMonitorActivityMonitor")]
+    [NUnit.Framework.CategoryAttribute("008WaitingMonitorActivityMonitor")]
     public partial class _008WaitingMonitorActivityMonitorFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private string[] _featureTags = ((string[])(null));
+        private string[] _featureTags = new string[] {
+                "008WaitingMonitorActivityMonitor"};
         
 #line 1 "008WaitingMonitorActivityMonitor.feature"
 #line hidden
@@ -35,7 +37,8 @@ namespace ERM.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "008WaitingMonitorActivityMonitor", "A short summary of the feature", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "008WaitingMonitorActivityMonitor", "A short summary of the feature", ProgrammingLanguage.CSharp, new string[] {
+                        "008WaitingMonitorActivityMonitor"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -82,7 +85,7 @@ namespace ERM.Features
                     "DeletingAgent"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("001 Verification of Activity Monitor feature.", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 6
+#line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -102,67 +105,67 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 8
+#line 9
  testRunner.Given("I am at VCC login page.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 9
+#line 10
  testRunner.When("I enter credentials.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 10
+#line 11
  testRunner.Then("I get logged in.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 11
+#line 12
  testRunner.When("I click on CCSupport.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 12
+#line 13
  testRunner.When("I click on add user button.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 13
+#line 14
  testRunner.When("I enter Username.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 14
+#line 15
  testRunner.And("I enter Email Address.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 15
+#line 16
  testRunner.And("I click on the profile tab.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 16
+#line 17
  testRunner.And("I click the OK button on the profile tab.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 17
+#line 18
  testRunner.Then("The agent is successfully created.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 18
+#line 19
  testRunner.When("I click on the edit button of the agent we created.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 19
+#line 20
  testRunner.And("I click the permission tab.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 20
+#line 21
  testRunner.And("I check the Enable activity monitor.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 21
+#line 22
  testRunner.And("I click the OK button on permission tab.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 22
+#line 23
  testRunner.Given("I am at the Web Client login page.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 23
+#line 24
  testRunner.When("When I enter username.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 24
+#line 25
  testRunner.And("I click on OK button on webclient login page.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 25
+#line 26
  testRunner.And("I click on OK button again on webclient login page.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 26
+#line 27
  testRunner.Then("I get logged in web client.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 27
+#line 28
  testRunner.When("I click on the Activity Monitor button in webclient.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 28
+#line 29
  testRunner.And("I close the Activity Monitor tab.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -178,7 +181,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "DeletingAgent"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("002 Verification of Waiting Monitor feature.", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 31
+#line 32
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -198,67 +201,67 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 33
+#line 34
  testRunner.Given("I am at VCC login page.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 34
+#line 35
  testRunner.When("I enter credentials.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 35
+#line 36
  testRunner.Then("I get logged in.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 36
+#line 37
  testRunner.When("I click on CCSupport.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 37
+#line 38
  testRunner.When("I click on add user button.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 38
+#line 39
  testRunner.When("I enter Username.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 39
+#line 40
  testRunner.And("I enter Email Address.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 40
+#line 41
  testRunner.And("I click on the profile tab.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 41
+#line 42
  testRunner.And("I click the OK button on the profile tab.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 42
+#line 43
  testRunner.Then("The agent is successfully created.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 43
+#line 44
  testRunner.When("I click on the edit button of the agent we created.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 44
+#line 45
  testRunner.And("I click the permission tab.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 45
+#line 46
  testRunner.And("I check the Enable waiting monitor.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 46
+#line 47
  testRunner.And("I click the OK button on permission tab.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 47
+#line 48
  testRunner.Given("I am at the Web Client login page.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 48
+#line 49
  testRunner.When("When I enter username.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 49
+#line 50
  testRunner.And("I click on OK button on webclient login page.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 50
+#line 51
  testRunner.And("I click on OK button again on webclient login page.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 51
+#line 52
  testRunner.Then("I get logged in web client.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 52
+#line 53
  testRunner.When("I click on the Waiting Monitor button.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 53
+#line 54
  testRunner.And("I close the Waiting Monitor tab.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

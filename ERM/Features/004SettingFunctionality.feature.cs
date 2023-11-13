@@ -101,7 +101,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 7
- testRunner.Given("I am at the Web Clinet login page.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I am at the Web Client login page.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
  testRunner.When("I click on the setting icon.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -159,7 +159,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 12
- testRunner.Given("I am at the Web Clinet login page.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I am at the Web Client login page.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 13
  testRunner.When("I click on the setting icon.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
