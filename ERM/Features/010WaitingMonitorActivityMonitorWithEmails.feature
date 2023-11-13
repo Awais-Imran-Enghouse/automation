@@ -1,4 +1,4 @@
-﻿@010WaitingMonitorActivityMonitorWithEmails
+﻿@010WaitingMonitorActivityMonitorWithEmails @DeletingRoutingRules @DeletingQueues @DeletingAgent
 Feature: 010WaitingMonitorActivityMonitorWithEmails
 
 A short summary of the feature
