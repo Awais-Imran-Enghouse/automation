@@ -3,7 +3,7 @@ Feature: 010WaitingMonitorActivityMonitorWithEmails
 
 A short summary of the feature
 
-#@DeletingRoutingRules @DeletingQueues @DeletingAgent
+@DeletingRoutingRules @DeletingQueues @DeletingAgent
 Scenario: 001 .
 #	
 

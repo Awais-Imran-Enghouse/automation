@@ -95,8 +95,9 @@ namespace ERM.StepDefinitions
         public void ThenIGetText_(string error)
         {
             string Error_Text = seleniumSetMethod.GetText(element: webClientLoginPageObjects.ErrorTextXpath, ProperType.X_Path, driver: driver);
-            Assert.AreEqual("Error", Error_Text);
             Console.Write(Error_Text);
+            Assert.AreEqual("Error", Error_Text);
+           
         }
 
 

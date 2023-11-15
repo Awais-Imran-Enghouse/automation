@@ -2,7 +2,7 @@
 ANF
 A short summary of the feature
 
-@tag1
+@DeletingAgent
 Scenario: 001 Verification of logged-in username, About Icon and Help Icon .
 #adding agent
 	Given I am at VCC login page.
@@ -27,6 +27,7 @@ Scenario: 001 Verification of logged-in username, About Icon and Help Icon .
 	And I click on the help icon.
 	Then A new tab is opened up and link includes 'vcc.bel.rd.eilab.biz/VccWebCenter/Files/Help/en/frames_client.html'.
 	
+@DeletingAgent
 Scenario: 002 Checking the changing Password feature.
 	#adding agent
 	Given I am at VCC login page.

@@ -2,7 +2,7 @@
 
 A short summary of the feature
 
-#@DeletingAgent
+@DeletingAgent
 Scenario: Adding user in CCSupport.
 	Given I am at VCC login page.
 	When I enter credentials.
