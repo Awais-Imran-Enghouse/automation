@@ -1,4 +1,5 @@
-﻿Feature: 006VerificationOfUser-PasswordIcon-AboutIcon-HelpIcon
+﻿@006VerificationOfUser-PasswordIcon-AboutIcon-HelpIcon
+Feature: 006VerificationOfUser-PasswordIcon-AboutIcon-HelpIcon
 ANF
 A short summary of the feature
 

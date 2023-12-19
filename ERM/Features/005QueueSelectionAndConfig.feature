@@ -1,11 +1,10 @@
 ﻿
 @005QueueSelectionAndConfig
-@DeletingQueues @DeletingAgent
 Feature: 005QueueSelectionAndConfig
 
 A short summary of the feature
 
-
+@DeletingQueues @DeletingAgent
 Scenario: Creating queues, configuring them and then ensuring their presence at Web Client login page
 	Given I am at VCC login page.
 	When I enter credentials.
@@ -20,8 +19,6 @@ Scenario: Creating queues, configuring them and then ensuring their presence at 
 
 
 	Given I am at VCC login page.
-#	When I enter credentials.
-	#Then I get logged in.
 	When I click on CCSupport.
 	When I click on Queue module.
 	When I clock on Add New Queue button.
@@ -32,8 +29,6 @@ Scenario: Creating queues, configuring them and then ensuring their presence at 
 
 
 	Given I am at VCC login page.
-#	When I enter credentials.
-#	Then I get logged in.
 	When I click on CCSupport.
 	And I click on the User module.
 	And I click on add user button.

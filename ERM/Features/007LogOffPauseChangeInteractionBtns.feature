@@ -1,4 +1,5 @@
-﻿Feature: 007LogOffPauseChangeInteractionBtns
+﻿@007LogOffPauseChangeInteractionBtns
+Feature: 007LogOffPauseChangeInteractionBtns
 
 A short summary of the feature
 

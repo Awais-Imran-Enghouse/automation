@@ -53,14 +53,6 @@ Scenario: 002 Verification of Waiting Monitor feature.
 	When I click on the Waiting Monitor button.
 	And I close the Waiting Monitor tab.
 
-	# When email is still not accepted.
-	# activity monitor status column will have transfering status
-	# When email will be accepted
-	# activity monitor status column will have conversation status
-	# queue column will have the name of queue with which user is logged in
-	# uncheck show log off agent, it will show only an agent which is logged in
-	# uncheck busy agent, it will only show the logged off agent, on checking it, it will show the logged in agent
-
-	#putting email on hold
+	
 
 

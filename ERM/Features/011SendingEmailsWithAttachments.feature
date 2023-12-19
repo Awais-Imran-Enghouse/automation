@@ -1,10 +1,10 @@
-﻿@010WaitingMonitorActivityMonitorWithEmails 
-Feature: 010WaitingMonitorActivityMonitorWithEmails
+﻿@011SendingEmailsWithAttachments  
+Feature: 011SendingEmailsWithAttachments
 
 A short summary of the feature
 
 @DeletingRoutingRules @DeletingQueues @DeletingAgent
-Scenario: 001 Status Testing of Waiting Monitor and Activity Monitor after Receiving Email.
+Scenario: 001 Sending emails with attachments.
 #	
 
 #	#adding queue
@@ -83,9 +83,9 @@ Scenario: 001 Status Testing of Waiting Monitor and Activity Monitor after Recei
 	And I click on the profile tab.
 	And I check the Voxtron Agent radio button.
 	And I click the OK button on the profile tab.
-#
+##
 ##	#sending emails
-	Given I send email from 'customer@voxtron.lab' to 'support@voxtron.lab'.
+	Given I send email from 'customer@voxtron.lab' to 'support@voxtron.lab' with attachment.
 #	
 	#logging in to webclient
 	Given I am at the Web Client login page.
@@ -93,33 +93,8 @@ Scenario: 001 Status Testing of Waiting Monitor and Activity Monitor after Recei
 	And I click on OK button on webclient login page.
 	When I checked 'Dummy Queue2'.
 	And I click on OK button again on webclient login page.
-	Then I get logged in web client.
-	When I click on the Activity Monitor button in webclient.
-	And I ensure that 'Dummy Agent1' has status 'Transferring'.
-	And I close the Activity Monitor tab.
-	
 	Then I click the Accept button.
-	When I click on the Activity Monitor button in webclient.
-	And I ensure that 'Dummy Agent1' has status 'Conversation'.
-	And I close the Activity Monitor tab.
-	Then I click on the Delete button.
+	And I ensure that email has attachment with it.
+	And I click on the Delete button.
 	And I enter comments 'Email has been deleted' in the Remarks input bar.
 	And I click on commit button to del the email.
-
-	#When I click on the Activity Monitor button in webclient.
-	When I ensure that 'Dummy Agent1' has status 'Free'.
-	And I close the Activity Monitor tab.
-
-	When I click on the Waiting Monitor button.
-	And I close the Waiting Monitor tab.
-
-	
-	# When email is still not accepted.
-	# activity monitor status column will have transfering status
-	# When email will be accepted
-	# activity monitor status column will have conversation status
-	# queue column will have the name of queue with which user is logged in
-	# uncheck show log off agent, it will show only an agent which is logged in
-	# uncheck busy agent, it will only show the logged off agent, on checking it, it will show the logged in agent
-
-	#putting email on hold

@@ -1,8 +1,7 @@
-﻿@003LoginWebClient 
+﻿@003LoginWebClient
 Feature: 003LoginWebClient
 
 A short summary of the feature
-
 @DeletingAgent
 Scenario: Adding user in CCSupport and login to the Web client with correct credentials.
 	Given I am at VCC login page.

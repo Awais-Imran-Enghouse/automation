@@ -1,4 +1,5 @@
-﻿Feature: 004SettingFunctionality
+﻿@004SettingFunctionality
+Feature: 004SettingFunctionality
 
 A short summary of the feature
 

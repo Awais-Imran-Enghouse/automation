@@ -1,11 +1,10 @@
-﻿Feature: 009HandlingMails
-
+﻿@009HandlingMails
+Feature: 009HandlingMails
 A short summary of the feature
 
 @DeletingRoutingRules @DeletingQueues @DeletingAgent
 Scenario: 001 Verification of Sending and Receiving Emails.
 #	
-
 	#adding queue
 	Given I am at VCC login page.
 	When I enter credentials.

@@ -198,12 +198,14 @@ namespace ERM.supportClasses
         public string EmailHandledCommitBtnXpath = "(//input[@title=\"Commit (Alt + Shift + Q)\"])[1]";
         public string EmailDelBtnXpath = "//input[@aria-label=\"Delete email (Alt + Shift + X)\"]";
         public string EmailDelCommitBtnXpath = "(//input[@title=\"Commit (Alt + Shift + Q)\"])[4]";
+        public string EmailAttachmentXpath = "//span[@id=\"lblAttachmentsMA\"]/following-sibling::a";
         public IDictionary<string, string> ElementValuesDic = new Dictionary<string, string>()
         {
             {"class","btn-toolbar-pause active" },
             {"aria-disabled","true"}
         };
-
+        public string ActivityMonitorStatusColumnWRTUsernameXpath = "//td[contains(text(),\"{0}\")]/following-sibling::td[6]";
+        //Wrap-up
         //public string NoInteractionYesXpath = "(//div[@class=\"table-buttons\"]/input[@value=\"Yes\"])[2]";
         //arbaz VM
         //public string url = "http://pkrd-akh-vcct1.vcc.bel.rd.eilab.biz/webclient/";
