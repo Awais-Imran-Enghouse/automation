@@ -5,14 +5,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.WebRequestMethods;
+using Newtonsoft;
+using Newtonsoft.Json;
+using ERM.Config;
 
 namespace ERM.supportClasses
 {
       class loginPageObjects
     {
 
+        public loginPageObjects() 
+        {
+            var json = System.IO.File.ReadAllText("./VccConfig.json");
+            Config = JsonConvert.DeserializeObject<VccConfigEnv>(json);
+            
+        }
+
         //public string url = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/Login.aspx";
-        public string url = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter";
+        //public string url = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter";
+        public VccConfigEnv Config { get; set; }
+        public string url => Config.WebCenterUrl;
         public string UsernameInputbarId = "txtUsername";
         public string PasswordInputbarId = "txtPassword";
         public string Username = "superadmin";
