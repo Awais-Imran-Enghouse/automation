@@ -23,12 +23,15 @@ namespace ERM.supportClasses
 
         //public string url = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/Login.aspx";
         //public string url = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter";
+        //public string Username = "superadmin";
+        //public string Password = "superadmin";
+
         public VccConfigEnv Config { get; set; }
         public string url => Config.WebCenterUrl;
+        public string Username => Config.Username;
+        public string Password => Config.Password;
         public string UsernameInputbarId = "txtUsername";
         public string PasswordInputbarId = "txtPassword";
-        public string Username = "superadmin";
-        public string Password = "superadmin";
         public string WrongPassword = "super";
         public string SubmitButtonXpath = "//*[@id=\"lbtLoginSubmit\"]/span";
         public string ErrorMsgId = "ui-id-1";

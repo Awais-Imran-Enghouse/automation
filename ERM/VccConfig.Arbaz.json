@@ -1,3 +1,5 @@
 {
-  "WebCenterUrl": "testing"
+  "WebCenterUrl": "testing",
+  "Username": "superadmin",
+  "Password": "superadmin"
 }

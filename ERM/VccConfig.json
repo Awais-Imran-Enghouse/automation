@@ -1,3 +1,5 @@
 {
-  "WebCenterUrl": "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/Vcc"
+  "WebCenterUrl": "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter",
+  "Username": "superadmin",
+  "Password": "superadmin"
 }

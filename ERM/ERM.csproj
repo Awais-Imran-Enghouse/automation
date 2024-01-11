@@ -28,6 +28,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="VccConfig.Arbaz.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="VccConfig.Awais.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="VccConfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
