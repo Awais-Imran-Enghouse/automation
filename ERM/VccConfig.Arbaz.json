@@ -1,5 +1,6 @@
 {
-  "WebCenterUrl": "testing",
+  "WebCenterUrl": "http://pkrd-akh-vcct1.vcc.bel.rd.eilab.biz/VccWebCenter/Login.aspx",
   "Username": "superadmin",
-  "Password": "superadmin"
+  "Password": "superadmin",
+  "ContactCenterName": "CC"
 }

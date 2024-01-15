@@ -8,6 +8,7 @@ using static System.Net.WebRequestMethods;
 using Newtonsoft;
 using Newtonsoft.Json;
 using ERM.Config;
+using System.Security.Cryptography.X509Certificates;
 
 namespace ERM.supportClasses
 {
@@ -42,10 +43,25 @@ namespace ERM.supportClasses
     }
     class HomePageObjects
     {
+        public VccConfigEnv Config { get; set; }
+        public string ContactCenterName { get; set; }
+        public string CCSupportXPath { get; set; }
+        public HomePageObjects()
+        {
+            //Config = new VccConfigEnv();
+            var json = System.IO.File.ReadAllText("./VccConfig.json");
+            Config = JsonConvert.DeserializeObject<VccConfigEnv>(json);
+            ContactCenterName = Config.ContactCenterName;
+            CCSupportXPath = String.Format("(//a[@title=\"{0}\"])[2]", ContactCenterName);
+        }
+        
         public string UsernameId = "menuHeaderUser";
-        public string CCSupportXPath = "(//a[@title=\"CCSUPPORT\"])[2]";
+        //public string CCSupportXPath = "(//a[@title=\"CCSUPPORT\"])[2]";
+        //public string ContactCenterName => Config.ContactCenterName;
+        //public string CCSupportXPath = String.Format("(//a[@title=\"{0}\"])[2]", ContactCenterName);
         public string AgentId = "tblVccGrid_row2_username";
         public string UsernameToBe = "Super Admin";
+
         //arbaz VM
         //public string CCSupportXPath = "(//a[@title=\"CC\"])[2]";
     }
