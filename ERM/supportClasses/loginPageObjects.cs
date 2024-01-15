@@ -67,7 +67,21 @@ namespace ERM.supportClasses
     }
     class CCSuportModuleObjects
     {
-        public string url = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=76cf08c6-f261-4202-a96b-0c07b4254aca&uc=Users";
+       
+        public CCSuportModuleObjects()
+        {
+            var json = System.IO.File.ReadAllText("./VccConfig.json");
+            Config = JsonConvert.DeserializeObject<VccConfigEnv>(json);
+          
+
+        }
+        public VccConfigEnv Config { get; set; }
+        public string url => Config.CCUserUrl;
+        public string QueueModuleUrl => Config.CCQueueModuleUrl;
+        //public string QueueUrl => Config.CCQueueModuleUrl;
+        //public string url = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=76cf08c6-f261-4202-a96b-0c07b4254aca&uc=Users";
+        //public string QueueUrl = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=76cf08c6-f261-4202-a96b-0c07b4254aca&uc=Queues";
+        //public string QueueModuleUrl = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=76cf08c6-f261-4202-a96b-0c07b4254aca&uc=Queues";
         public string AddNewUserButtonId = "btnNew";
         public string AddNewUserButtonXpath = "//div[@id=\"divGrid\"]/a[@role=\"button\"]/span[@class=\"icon\"]";
         public string AddNewQueueButtonXpath = "//div[@id=\"divGrid\"]/a[@role=\"button\"]/span[@class=\"icon\"]";
@@ -96,7 +110,6 @@ namespace ERM.supportClasses
         public string QueueName1 = "Default Dummy Queue";
         public string QueueDelOkButtonXpath = "(//button/span[contains(text(),'Ok')])[6]";
         public string QueueListXpath = "//tbody[@id='tblVccGrid_body']/tr";
-        public string QueueUrl = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=76cf08c6-f261-4202-a96b-0c07b4254aca&uc=Queues";
         public string QueueAlreadyPresentOkXpath = "(//span[contains(text(),'Ok')])[6]";
         public string QueueSelectedRadioButtonXpath = "(//td[contains(text(),\"{0}\")]/parent::tr/td)[2]/div/label[@for=\"ckbQueueSelected7_InteractionID7_UserID6\"]";
         //public string QueueChangedRadioButtonXpath = "(//td[contains(text(),\"{0}\")]/parent::tr/td)[3]/div/label[@for=\"ckbQueueChange8_InteractionID7_UserID6\"]";
@@ -117,7 +130,6 @@ namespace ERM.supportClasses
         public string PauseLastAgentCheckBoxXpath = "//div[@class=\"vcc-checkbox\"]/label[@for=\"ckbAsPauseLastAgent\"]";
         public string QueueAgentSettingOkBtnId = "btnSave";
         public string UserModuleId = "CC_01_Users";
-        public string QueueModuleUrl = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=76cf08c6-f261-4202-a96b-0c07b4254aca&uc=Queues";
         public string PermissionTabId = "ui-id-3";
         public string ActivityMonitorChkBoxXpath = "//label[@for=\"Permission2\"]";
         public string WaitingMonitorChkBoxXpath = "//label[@for=\"Permission3\"]";

@@ -1,5 +1,7 @@
 {
   "WebCenterUrl": "http://pkrd-akh-vcct1.vcc.bel.rd.eilab.biz/VccWebCenter/Login.aspx",
+  "CCUserUrl": "http://pkrd-akh-vcct1.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=20fcce3b-d8c3-41f8-a62b-531b79189c22&uc=Users",
+  "CCQueueModuleUrl": "http://pkrd-akh-vcct1.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=20fcce3b-d8c3-41f8-a62b-531b79189c22&uc=Queues",
   "Username": "superadmin",
   "Password": "superadmin",
   "ContactCenterName": "CC"

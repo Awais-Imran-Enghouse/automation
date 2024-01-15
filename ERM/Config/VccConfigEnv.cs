@@ -12,5 +12,9 @@ namespace ERM.Config
         public string Username { get; set; }
         public string Password { get; set; }
         public string ContactCenterName { get; set; }
+        public string CCUserUrl { get; set;}
+        public string CCQueueModuleUrl { get; set; }
+
+
     }
 }
