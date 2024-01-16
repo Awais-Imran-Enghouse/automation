@@ -99,13 +99,15 @@ namespace ERM
 
                 if (name == username)
                 {
-                    Console.WriteLine("User name is matched and is about to be deleted" + name);
+                    
+                    Console.WriteLine("User name is matched and is about to be deleted " + name);
+
                     seleniumSetMethod.Click(element: ccSupportModuleObject.AddedAgentXpath.Insert(19, ccSupportModuleObject.Username), ProperType.X_Path, driver: driver);
                     seleniumSetMethod.Click(element: ccSupportModuleObject.DeletingOkButtonXpath, ProperType.X_Path, driver: driver);
-
+                    break;
                 }
             }
-            Thread.Sleep(10000);
+            Thread.Sleep(3000);
 
             //Testing
             //new Actions(driver)

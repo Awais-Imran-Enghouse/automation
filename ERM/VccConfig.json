@@ -1,8 +1,8 @@
 {
-  "WebCenterUrl": "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter",
-  "CCUserUrl": "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=76cf08c6-f261-4202-a96b-0c07b4254aca&uc=Users",
-  "CCQueueModuleUrl": "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=76cf08c6-f261-4202-a96b-0c07b4254aca&uc=Queues",
+  "WebCenterUrl": "http://pkrd-akh-vcct1.vcc.bel.rd.eilab.biz/VccWebCenter/Login.aspx",
+  "CCUserUrl": "http://pkrd-akh-vcct1.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=20fcce3b-d8c3-41f8-a62b-531b79189c22&uc=Users",
+  "CCQueueModuleUrl": "http://pkrd-akh-vcct1.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=20fcce3b-d8c3-41f8-a62b-531b79189c22&uc=Queues",
   "Username": "superadmin",
   "Password": "superadmin",
-  "ContactCenterName": "CCSUPPORT"
+  "ContactCenterName": "CC"
 }
