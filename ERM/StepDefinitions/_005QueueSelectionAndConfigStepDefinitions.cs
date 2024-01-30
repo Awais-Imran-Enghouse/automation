@@ -107,13 +107,19 @@ namespace ERM.StepDefinitions
         {
             seleniumSetMethod.Click(element:ccSupportModuleObject.QueueTabXPath,elementType:ProperType.X_Path,driver:driver);
             Thread.Sleep(5000);
+            
         }
         [When(@"I check the selected option\.")]
         public void WhenICheckTheSelectedOption_()
         {
-            string Xpath_Selected_Row = string.Format(ccSupportModuleObject.QueueSelectedRadioButtonXpath, ccSupportModuleObject.QueueNamesList[0]);
+            //
+            string add_dummy_agent = string.Format(ccSupportModuleObject.QueueSelectedForElemenetTakerXpath, ccSupportModuleObject.QueueNamesList[0]);
+            string for_value_finder = driver.FindElement(By.XPath(add_dummy_agent)).GetAttribute("for");
+
+            string Xpath_Selected_Row = string.Format(ccSupportModuleObject.QueueSelectedRadioButtonXpath, ccSupportModuleObject.QueueNamesList[0], for_value_finder);
+            Console.WriteLine(Xpath_Selected_Row);
             seleniumSetMethod.Click(element: Xpath_Selected_Row, elementType: ProperType.X_Path, driver: driver);
-            
+
         }
 
         [When(@"I check the change option for Dummy Queue2")]

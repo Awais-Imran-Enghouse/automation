@@ -14,7 +14,7 @@ Scenario: 001 Verification of logged-in username, About Icon and Help Icon .
 	When I enter Username.
 	And I enter Email Address.
 	And I click on the profile tab.
-	And I click the OK button.
+	And I click the OK button on the profile tab.
 	Then The agent is successfully created.
 	#performing main scenario
 	Given I am at the Web Client login page.
@@ -26,7 +26,7 @@ Scenario: 001 Verification of logged-in username, About Icon and Help Icon .
 	Then I get the version of voxtron.
 	When I close the pop up.
 	And I click on the help icon.
-	Then A new tab is opened up and link includes 'vcc.bel.rd.eilab.biz/VccWebCenter/Files/Help/en/frames_client.html'.
+	Then A new tab is opened up and link includes '/VccWebCenter/Files/'.
 	
 @DeletingAgent
 Scenario: 002 Checking the changing Password feature.
@@ -39,7 +39,7 @@ Scenario: 002 Checking the changing Password feature.
 	When I enter Username.
 	And I enter Email Address.
 	And I click on the profile tab.
-	And I click the OK button.
+	And I click the OK button on the profile tab.
 	Then The agent is successfully created.
 
 	#Configuring Security

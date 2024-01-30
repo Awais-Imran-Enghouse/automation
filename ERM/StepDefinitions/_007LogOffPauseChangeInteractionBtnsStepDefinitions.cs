@@ -103,13 +103,14 @@ namespace ERM.StepDefinitions
         [When(@"I click the Pause button\.")]
         public void WhenIClickThePauseButton_()
         {
+            seleniumSetMethod.ExplicitWait(element: webClientLoginPageObjects.PauseBtnId, elementType: ProperType.Id, driver: driver);
             seleniumSetMethod.Click(element:webClientLoginPageObjects.PauseBtnId, elementType:ProperType.Id, driver:driver);    
         }
 
         [Then(@"It is successfully paused\.")]
         public void ThenItIsSuccessfullyPaused_()
         {
-            Thread.Sleep(2000);
+            Thread.Sleep(4000);
             string actualu_element_value = webClientLoginPageObjects.ElementValuesDic.ElementAt(0).Value;
             Console.WriteLine("actual value" + " " + actualu_element_value);
 

@@ -111,9 +111,11 @@ namespace ERM.supportClasses
         public string QueueDelOkButtonXpath = "(//button/span[contains(text(),'Ok')])[6]";
         public string QueueListXpath = "//tbody[@id='tblVccGrid_body']/tr";
         public string QueueAlreadyPresentOkXpath = "(//span[contains(text(),'Ok')])[6]";
-        public string QueueSelectedRadioButtonXpath = "(//td[contains(text(),\"{0}\")]/parent::tr/td)[2]/div/label[@for=\"ckbQueueSelected7_InteractionID7_UserID6\"]";
+        //public string QueueSelectedRadioButtonXpath = "(//td[contains(text(),\"{0}\")]/parent::tr/td)[2]/div/label[@for=\"ckbQueueSelected7_InteractionID7_UserID6\"]";
+        public string QueueSelectedRadioButtonXpath = "(//td[contains(text(),\"{0}\")]/parent::tr/td)[2]/div/label[@for=\"{1}\"]";
         //public string QueueChangedRadioButtonXpath = "(//td[contains(text(),\"{0}\")]/parent::tr/td)[3]/div/label[@for=\"ckbQueueChange8_InteractionID7_UserID6\"]";
         public string QueueChangedRadioButtonXpath = "(//td[contains(text(),\"{0}\")]/parent::tr/td)[3]/div/label[@for=\"{1}\"]";
+        public string QueueSelectedForElemenetTakerXpath = "(//td[contains(text(),\"{0}\")]/parent::tr/td)[2]/div/label";
         public string QueueChangedForElemenetTakerXpath = "(//td[contains(text(),\"{0}\")]/parent::tr/td)[3]/div/label";
         public string QueuePageOkButtonId = "btnSave";
         public string AgentNameSuffixIdPart = "_username";
@@ -131,7 +133,9 @@ namespace ERM.supportClasses
         public string QueueAgentSettingOkBtnId = "btnSave";
         public string UserModuleId = "CC_01_Users";
         public string PermissionTabId = "ui-id-3";
+        public string ActivityMoniorIsSelectOrNotXpath = "//input[@id=\"Permission2\"]";
         public string ActivityMonitorChkBoxXpath = "//label[@for=\"Permission2\"]";
+        public string WaitingMoniorIsSelectOrNotXpath = "//input[@id=\"Permission3\"]";
         public string WaitingMonitorChkBoxXpath = "//label[@for=\"Permission3\"]";
         public string PermissionTabOkButtonId = "btnSave";
         public string SkillsTabId = "ui-id-4";
@@ -187,7 +191,16 @@ namespace ERM.supportClasses
 
     class WebClientLoginPageObjects
     {
-        public string url = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/webclient/";
+        public VccConfigEnv config { get; set; }
+        public string url { get; set; }
+        public WebClientLoginPageObjects() {
+            var json = System.IO.File.ReadAllText("./VccConfig.json");
+            config = JsonConvert.DeserializeObject<VccConfigEnv>(json);
+            url = config.WebClientUrl;
+
+        }
+
+        //public string url = "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/webclient/";
         public string UsernameInputbarId = "txtUsername";
         public string PasswordId = "txtPassword";
         public string OkButtonXpath = "//input[@id=\"btnOK\"]";

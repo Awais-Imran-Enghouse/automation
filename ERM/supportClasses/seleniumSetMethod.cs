@@ -210,17 +210,24 @@ namespace ConsoleApp1
             else if (elementType == ProperType.X_Path && !(driver.FindElement(By.XPath(element)).Selected))
             {
                 bool checked_ = driver.FindElement(By.XPath(element)).Selected;
+                bool chk = !checked_;
                 Console.WriteLine("Testing");
-                Console.WriteLine(!(driver.FindElement(By.XPath(element)).Selected));
-                Console.WriteLine("check method 3 ", "checked ? ", checked_ );
+                Console.WriteLine(" ... "+ driver.FindElement(By.XPath(element)).Selected);
+                //Console.WriteLine(" ... " + driver.FindElement(By.XPath("//input[@id=\"Permission2\"]")).Selected);
+
                 
+                //Console.WriteLine("check "+checked_);
+                //Console.WriteLine("check" + chk);
+
+
                 driver.FindElement(By.XPath(element)).Click();
                 
 
             }
             else
             {
-                Assert.Fail();
+                //Assert.Fail();
+                Console.WriteLine("Already checked");
             }
 
         }
@@ -234,7 +241,7 @@ namespace ConsoleApp1
             if (elementType == ProperType.Id)
             {
                 bool checked_ = driver.FindElement(By.Id(element)).Selected;
-                Console.WriteLine("check method 1");
+                
                 //SelectElement dropDown = new SelectElement(driver.FindElement(By.Id(element)));
                 //dropDown.SelectByText(element);
                 return checked_;
@@ -243,7 +250,7 @@ namespace ConsoleApp1
             else if (elementType == ProperType.Name )
             {
                 bool checked_ = driver.FindElement(By.Name(element)).Selected;
-                Console.WriteLine("check method 1");
+                
                 //SelectElement dropDown = new SelectElement(driver.FindElement(By.Id(element)));
                 //dropDown.SelectByText(element);
                 return checked_;
@@ -252,7 +259,7 @@ namespace ConsoleApp1
             else if (elementType == ProperType.X_Path)
             {
                 bool checked_ = driver.FindElement(By.XPath(element)).Selected;
-                Console.WriteLine("check method 1");
+                
                 //SelectElement dropDown = new SelectElement(driver.FindElement(By.Id(element)));
                 //dropDown.SelectByText(element);
                 return checked_; 

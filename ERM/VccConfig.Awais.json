@@ -2,6 +2,7 @@
   "WebCenterUrl": "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter",
   "CCUserUrl": "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=76cf08c6-f261-4202-a96b-0c07b4254aca&uc=Users",
   "CCQueueModuleUrl": "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=76cf08c6-f261-4202-a96b-0c07b4254aca&uc=Queues",
+  "WebClientUrl": "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/webclient/",
   "Username": "superadmin",
   "Password": "superadmin",
   "ContactCenterName": "CCSUPPORT"

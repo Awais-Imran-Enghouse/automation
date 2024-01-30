@@ -14,7 +14,7 @@ namespace ERM.Config
         public string ContactCenterName { get; set; }
         public string CCUserUrl { get; set;}
         public string CCQueueModuleUrl { get; set; }
-
+        public string WebClientUrl { get; set;}
 
     }
 }
