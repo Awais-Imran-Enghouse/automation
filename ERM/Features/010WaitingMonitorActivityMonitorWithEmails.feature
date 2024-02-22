@@ -50,7 +50,8 @@ Scenario: 001 Status Testing of Waiting Monitor and Activity Monitor after Recei
 	Given I am at VCC login page.
 	When I click the ERMSupport.
 	And I click on the mailboxes.
-	And I click on the edit button of "Support".
+	#And I click on the edit button of "Support".
+	And I click on the edit button of mailbox.
 	And I click on the Routing Routes.
 	And I click on the Add New Rules button.
 	And I enter the name of queue.
@@ -85,8 +86,9 @@ Scenario: 001 Status Testing of Waiting Monitor and Activity Monitor after Recei
 	And I click the OK button on the profile tab.
 #
 ##	#sending emails
-	Given I send email from 'customer@voxtron.lab' to 'support@voxtron.lab'.
-#	
+	#Given I send email from 'customer@voxtron.lab' to 'support@voxtron.lab'.
+	Given I send email from customer to client.
+
 	#logging in to webclient
 	Given I am at the Web Client login page.
 	When When I enter username.
@@ -114,12 +116,4 @@ Scenario: 001 Status Testing of Waiting Monitor and Activity Monitor after Recei
 	And I close the Waiting Monitor tab.
 
 	
-	# When email is still not accepted.
-	# activity monitor status column will have transfering status
-	# When email will be accepted
-	# activity monitor status column will have conversation status
-	# queue column will have the name of queue with which user is logged in
-	# uncheck show log off agent, it will show only an agent which is logged in
-	# uncheck busy agent, it will only show the logged off agent, on checking it, it will show the logged in agent
-
-	#putting email on hold
+	

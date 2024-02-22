@@ -15,6 +15,8 @@ namespace ERM.Config
         public string CCUserUrl { get; set;}
         public string CCQueueModuleUrl { get; set; }
         public string WebClientUrl { get; set;}
-
+        public string MailboxName { get; set; }
+        public string CustomerEmailAddress { get; set; }
+        public string ClientEmailAddress { get; set; }
     }
 }

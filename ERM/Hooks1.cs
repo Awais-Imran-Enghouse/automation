@@ -14,6 +14,8 @@ using WebDriverManager;
 using ERM.StepDefinitions;
 using OpenQA.Selenium.Interactions;
 using System.Linq.Expressions;
+using ERM.Config;
+using Newtonsoft.Json;
 //using OpenQA.Selenium.We
 
 namespace ERM
@@ -29,8 +31,17 @@ namespace ERM
         CCSuportModuleObjects ccSupportModuleObject = new CCSuportModuleObjects();
         ErmModuleObjects ermModuleObjects = new ErmModuleObjects();
         ApplicationFixtures applicationFixtures = new ApplicationFixtures();
-        // taken
-        
+
+
+        public VccConfigEnv config { get; set; }
+        public string MailBoxName { get; set; }
+        public Hooks1()
+        {
+            var json = System.IO.File.ReadAllText("./VccConfig.json");
+            config = JsonConvert.DeserializeObject<VccConfigEnv>(json);
+            MailBoxName = config.MailboxName;
+        }
+
         private readonly IObjectContainer _container;
         
         public Hooks1(IObjectContainer container)
@@ -267,7 +278,7 @@ namespace ERM
                     Console.WriteLine(e.ToString());
                 }
                     string url = driver.Url;
-                    applicationFixtures.EditRow(allListFinderElement: ccSupportModuleObject.QueueListXpath, driver: driver, nameSuffixIdPart: "_name", nameToEditRow: "Support", editSuffixIdPart: ccSupportModuleObject.AgentEditSuffixIdPart, url: ermModuleObjects.MailBoxUrl);
+                    applicationFixtures.EditRow(allListFinderElement: ccSupportModuleObject.QueueListXpath, driver: driver, nameSuffixIdPart: "_name", nameToEditRow: MailBoxName, editSuffixIdPart: ccSupportModuleObject.AgentEditSuffixIdPart, url: ermModuleObjects.MailBoxUrl);
 
                     seleniumSetMethod.ExplicitWait(element: ermModuleObjects.RoutingRulesTabId, elementType: ProperType.Id, driver: driver);
                     seleniumSetMethod.Click(element: ermModuleObjects.RoutingRulesTabId, elementType: ProperType.Id, driver: driver);

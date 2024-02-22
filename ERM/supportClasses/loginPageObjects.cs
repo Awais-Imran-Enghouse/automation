@@ -144,8 +144,10 @@ namespace ERM.supportClasses
         public string SkillTabId = "ui-id-4";
         public string SupportCheckBoxXpath = "//input[@aria-label=\"Support\"]/following-sibling::label";
         public string SkillTabOkBtnId = "btnSave";
-        public string VoxAgentChkBoxXpath = "//input[@id=\"ckbProfile3_UserID6\"]/following-sibling::label";
-        public string QueueInboundEmailSelectedXpath = "(//td[contains(text(),\"{0}\")]/parent::tr/td)[8]/div/label[@for=\"ckbQueueSelected8_InteractionID3_UserID6\"]";
+        //public string VoxAgentChkBoxXpath = "//input[@id=\"ckbProfile3_UserID6\"]/following-sibling::label";
+        public string VoxAgentChkBoxXpath = "(//span[contains(text(),\"Voxtron agent\")])[2]/preceding-sibling::label";
+        //public string QueueInboundEmailSelectedXpath = "(//td[contains(text(),\"{0}\")]/parent::tr/td)[10]/div/label[@for=\"ckbQueueSelected8_InteractionID3_UserID17\"]";
+        public string QueueInboundEmailSelectedXpath = "(//td[contains(text(),\"Dummy Queue2\")]/parent::tr/td)[10]/div/label";
         public string LogoutArrowXpath = "//span[@class=\"caret caret-left\"]";
         public string LogoutXpath = "//ul[@class=\"dropdown-menu\"]/li/a[contains(text(),\"Log off\")]";
 
@@ -155,8 +157,22 @@ namespace ERM.supportClasses
         //public string QueueChangedRadioButtonXpath = "(//td[contains(text(),\"{0}\")]/parent::tr/td)[3]/div/label";
     }
 
-    class ErmModuleObjects
+    class ErmModuleObjects  
     {
+       
+        public VccConfigEnv config { get; set; }
+        public string MailBoxName { get; set; }
+        public string ClientEmailAddress { get; set; }
+        public string CustomertEmailAddress { get; set; }
+
+        public ErmModuleObjects()
+        {
+            var json = System.IO.File.ReadAllText("./VccConfig.json");
+            config = JsonConvert.DeserializeObject<VccConfigEnv>(json);
+            MailBoxName = config.MailboxName;
+            ClientEmailAddress = config.ClientEmailAddress;
+            CustomertEmailAddress = config.CustomerEmailAddress;
+        }
         public string ErmModuleXpath = "(//td[@aria-label=\"Email response management\"]/following-sibling::td)[1]/a";
         public string MailBoxesTabId = "ERM_01_MessageBoxes";
         public string RoutingRulesTabId = "ui-id-7";

@@ -158,7 +158,7 @@ namespace ERM.StepDefinitions
         {
             try
             {
-                driver.Manage().Window.Maximize();
+                //driver.Manage().Window.Maximize();
                 Thread.Sleep(10000);
                 seleniumSetMethod.Click(element: ccSupportModuleObject.ProfileTabXPath, elementType: ProperType.X_Path, driver: driver);
                 Thread.Sleep(3000);

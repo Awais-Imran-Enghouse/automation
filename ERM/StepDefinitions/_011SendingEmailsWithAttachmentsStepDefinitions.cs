@@ -24,15 +24,15 @@ namespace ERM.StepDefinitions
         {
             this.driver = driver;
         }
-        [Given(@"I send email from '([^']*)' to '([^']*)' with attachment\.")]
-        public void GivenISendEmailFromToWithAttachment_(string from_, string to_)
+        //[Given(@"I send email from '([^']*)' to '([^']*)' with attachment\.")]
+        //public void GivenISendEmailFromToWithAttachment_(string from_, string to_)
+        [Given(@"I send email from customer to client with attachment\.")]
+        public void GivenISendEmailFromToWithAttachment_()
         {
 
             MailMessage mail = new MailMessage();
-            //string fromMail_ = "customer@voxtron.lab";
-            string fromMail_ = from_;
-            //string toMail_ = "support@voxtron.lab";
-            string toMail_ = to_;
+            string fromMail_ = ermModuleObjects.CustomertEmailAddress;
+            string toMail_ = ermModuleObjects.ClientEmailAddress;
             string password = "diadora.2";
             //string password = "";
             string subject = "queue2 " + DateTime.Now.ToString("MM/dd/yyyy HH:mm");

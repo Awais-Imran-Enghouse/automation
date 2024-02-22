@@ -47,11 +47,15 @@ namespace ERM.StepDefinitions
         //    applicationFixtures.EditRow(allListFinderElement: ccSupportModuleObject.QueueListXpath, driver: driver, nameSuffixIdPart: "_name", nameToEditRow: p0, editSuffixIdPart: ccSupportModuleObject.AgentEditSuffixIdPart, url: url);
 
         //}
-        [When(@"I click on the edit button of ""([^""]*)""\.")]
-        public void WhenIClickOnTheEditButtonOf_(string support)
+        //[When(@"I click on the edit button of ""([^""]*)""\.")]
+        [When(@"I click on the edit button of mailbox.")]
+        public void WhenIClickOnTheEditButtonOf_()
         {
+
             string url = driver.Url;
-            applicationFixtures.EditRow(allListFinderElement: ccSupportModuleObject.QueueListXpath, driver: driver, nameSuffixIdPart: "_name", nameToEditRow: support, editSuffixIdPart: ccSupportModuleObject.AgentEditSuffixIdPart, url: url);
+            //applicationFixtures.EditRow(allListFinderElement: ccSupportModuleObject.QueueListXpath, driver: driver, nameSuffixIdPart: "_name", nameToEditRow: support, editSuffixIdPart: ccSupportModuleObject.AgentEditSuffixIdPart, url: url);
+           
+            applicationFixtures.EditRow(allListFinderElement: ccSupportModuleObject.QueueListXpath, driver: driver, nameSuffixIdPart: "_name", nameToEditRow: ermModuleObjects.MailBoxName, editSuffixIdPart: ccSupportModuleObject.AgentEditSuffixIdPart, url: url);
 
         }
 
@@ -214,11 +218,11 @@ namespace ERM.StepDefinitions
         {
             if (option=="selected" && Q == "Q2")
             {
-                string Xpath_Selected_Row = string.Format(ccSupportModuleObject.QueueInboundEmailSelectedXpath, ccSupportModuleObject.QueueNamesList[1]);
-                Console.WriteLine(Xpath_Selected_Row);
-                seleniumSetMethod.Click(element: Xpath_Selected_Row, elementType: ProperType.X_Path, driver: driver);
+                //string Xpath_Selected_Row = string.Format(ccSupportModuleObject.QueueInboundEmailSelectedXpath, ccSupportModuleObject.QueueNamesList[1]);
+                //Console.WriteLine(Xpath_Selected_Row);
+                //seleniumSetMethod.Click(element: Xpath_Selected_Row, elementType: ProperType.X_Path, driver: driver);
                 //ckbQueueSelected8_InteractionID3_UserID6
-                //seleniumSetMethod.CheckRadioBtn(element: "ckbQueueSelected8_InteractionID3_UserID6", elementType: ProperType.Id, driver: driver);
+                seleniumSetMethod.Click(element: ccSupportModuleObject.QueueInboundEmailSelectedXpath, elementType: ProperType.X_Path, driver: driver);
             }
         }
 
@@ -266,8 +270,37 @@ namespace ERM.StepDefinitions
             smtp.Send(mail);
             Thread.Sleep(10000);
         }
+        [Given(@"I send email from customer to client\.")]
+        public void GivenISendEmailFromTo_()
+        {
 
-        
+
+            MailMessage mail = new MailMessage();
+            //string fromMail_ = "customer@voxtron.lab";
+            string fromMail_ = ermModuleObjects.CustomertEmailAddress;
+            //string toMail_ = "support@voxtron.lab";
+            string toMail_ = ermModuleObjects.ClientEmailAddress;
+            string password = "diadora.2";
+            //string password = "jto";
+            string subject = "queue2 " + DateTime.Now.ToString("MM/dd/yyyy HH:mm");
+            string body = "<h3> From VS </h3>";
+
+
+            mail.From = new MailAddress(fromMail_);
+            mail.To.Add(toMail_);
+            mail.Subject = subject;
+            mail.Body = body;
+            mail.IsBodyHtml = true;
+
+            SmtpClient smtp = new SmtpClient("pkrd-aim-vcc.vcc.bel.rd.eilab.biz", 25);
+            //SmtpClient smtp = new SmtpClient("BE-JWI-W16-03.vcc.bel.rd.eilab.biz", 587);
+            smtp.UseDefaultCredentials = false;
+            smtp.EnableSsl = false;
+            smtp.Credentials = new NetworkCredential(fromMail_, password);
+            smtp.Send(mail);
+            Thread.Sleep(10000);
+        }
+
 
         [Then(@"I click the Accept button\.")]
         public void ThenIClickTheAcceptButton_()

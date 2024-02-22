@@ -25,6 +25,7 @@
   <ItemGroup>
     <Folder Include="Drivers\" />
     <Folder Include="FilesToBeAttachedWithEmail\" />
+    <Folder Include="Resources\Emails\" />
     <Folder Include="Support\" />
   </ItemGroup>
 

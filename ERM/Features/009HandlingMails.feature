@@ -4,8 +4,8 @@ A short summary of the feature
 
 @DeletingRoutingRules @DeletingQueues @DeletingAgent
 Scenario: 001 Verification of Sending and Receiving Emails.
-#	
-	#adding queue
+##	
+#	#adding queue
 	Given I am at VCC login page.
 	When I enter credentials.
 	Then I get logged in.
@@ -45,7 +45,8 @@ Scenario: 001 Verification of Sending and Receiving Emails.
 	Given I am at VCC login page.
 	When I click the ERMSupport.
 	And I click on the mailboxes.
-	And I click on the edit button of "Support".
+	#And I click on the edit button of "Support".
+	And I click on the edit button of mailbox.
 	And I click on the Routing Routes.
 	And I click on the Add New Rules button.
 	And I enter the name of queue.
@@ -64,7 +65,7 @@ Scenario: 001 Verification of Sending and Receiving Emails.
 	And I click the ok button of Add Action window of Add New Rule pop up.
 	And I click the Update button of Add New Rule pop up.
 #	
-	##assigning skills to Agent.
+	###assigning skills to Agent.
 	Given I am at VCC login page.
 	When I click on CCSupport.
 	And I click on the User module.
@@ -80,9 +81,10 @@ Scenario: 001 Verification of Sending and Receiving Emails.
 	And I click the OK button on the profile tab.
 
 #	#sending emails
-	Given I send email from 'customer@voxtron.lab' to 'support@voxtron.lab'.
-###
-###	#receiving Email and Marking as Handled
+	#Given I send email from 'customer@voxtron.lab' to 'support@voxtron.lab'.
+	Given I send email from customer to client.
+####
+####	#receiving Email and Marking as Handled
 	Given I am at the Web Client login page.
 	When When I enter username.
 	And I click on OK button on webclient login page.
@@ -94,8 +96,9 @@ Scenario: 001 Verification of Sending and Receiving Emails.
 	And I enter comments 'Email has been handled' in the Remarks input bar.
 	And I click on commit button to handle the email.
 
-#	#sending emails
-	Given I send email from 'customer@voxtron.lab' to 'support@voxtron.lab'.
+##	#sending emails
+	#Given I send email from 'customer@voxtron.lab' to 'support@voxtron.lab'.
+	Given I send email from customer to client.
 
 	#receiving Email and Marking as Deleted
 	Given I am at the Web Client login page.

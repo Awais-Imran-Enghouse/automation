@@ -71,7 +71,8 @@ namespace ERM.supportClasses
                 if (name == nameToEditRow)
                 {
                     string deleteId = "tblVccGrid_row" + i + editSuffixIdPart;
-                    Console.WriteLine("User name is matched and is about to be deleted" + name);
+                    Console.WriteLine("User name is matched " + name + " Locator is :"+ deleteId);
+                    Console.WriteLine(deleteId);
 
                     seleniumSetMethod.Click(element: deleteId, ProperType.Id, driver: driver);
                     Thread.Sleep(3000);

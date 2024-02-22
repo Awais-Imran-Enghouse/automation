@@ -7,7 +7,7 @@ A short summary of the feature
 Scenario: 001 Sending emails with attachments.
 #	
 
-#	#adding queue
+##	#adding queue
 	Given I am at VCC login page.
 	When I enter credentials.
 	Then I get logged in.
@@ -44,13 +44,14 @@ Scenario: 001 Sending emails with attachments.
 	And I check the Enable activity monitor.
 	And I check the Enable waiting monitor.
 	And I click the OK button on permission tab.
-	
-
-	##assigning Routing Rules to queue
+#	
+#
+#	##assigning Routing Rules to queue
 	Given I am at VCC login page.
 	When I click the ERMSupport.
 	And I click on the mailboxes.
-	And I click on the edit button of "Support".
+	#And I click on the edit button of "Support".
+	And I click on the edit button of mailbox.
 	And I click on the Routing Routes.
 	And I click on the Add New Rules button.
 	And I enter the name of queue.
@@ -85,8 +86,9 @@ Scenario: 001 Sending emails with attachments.
 	And I click the OK button on the profile tab.
 ##
 ##	#sending emails
-	Given I send email from 'customer@voxtron.lab' to 'support@voxtron.lab' with attachment.
-#	
+	#Given I send email from 'customer@voxtron.lab' to 'support@voxtron.lab' with attachment.
+	Given I send email from customer to client with attachment.	
+
 	#logging in to webclient
 	Given I am at the Web Client login page.
 	When When I enter username.
