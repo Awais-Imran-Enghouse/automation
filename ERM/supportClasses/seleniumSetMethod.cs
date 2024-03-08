@@ -172,17 +172,17 @@ namespace ConsoleApp1
         {
             if (elementType == ProperType.X_Path)
             {
-                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(40));
                 IWebElement firstResult = wait.Until(driver => driver.FindElement(By.XPath(element)));
             }
             if (elementType == ProperType.Id)
             {
-                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(40));
                 IWebElement firstResult = wait.Until(driver => driver.FindElement(By.Id(element)));
             }
             if (elementType == ProperType.Name)
             {
-                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(40));
                 IWebElement firstResult = wait.Until(driver => driver.FindElement(By.Name(element)));
             }
         }

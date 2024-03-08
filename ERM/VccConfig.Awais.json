@@ -5,5 +5,10 @@
   "WebClientUrl": "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/webclient/",
   "Username": "superadmin",
   "Password": "superadmin",
-  "ContactCenterName": "CCSUPPORT"
+  "ContactCenterName": "CCSUPPORT",
+  "MailboxName": "Support",
+  "CustomerEmailAddress": "customer@voxtron.lab",
+  "ClientEmailAddress": "support@voxtron.lab",
+  "Server": "pkrd-aim-vcc.vcc.bel.rd.eilab.biz",
+  "ServerPassword": "diadora.2"
 }

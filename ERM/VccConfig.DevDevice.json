@@ -5,5 +5,10 @@
   "WebClientUrl": "http://10.51.28.199/webclient_10_0/",
   "Username": "superadmin",
   "Password": "superadmin",
-  "ContactCenterName": "CC version 10.1"
+  "ContactCenterName": "CC version 10.1",
+  "MailboxName": "FAFNIR 10.0",
+  "CustomerEmailAddress": "jto-erm@vcc.bel.rd.eilab.biz",
+  "ClientEmailAddress": "jto-erm@vcc.bel.rd.eilab.biz",
+  "Server": "BE-JWI-W16-03.vcc.bel.rd.eilab.biz",
+  "ServerPassword": "jto"
 }

@@ -86,7 +86,6 @@ Scenario: 001 Status Testing of Waiting Monitor and Activity Monitor after Recei
 	And I click the OK button on the profile tab.
 #
 ##	#sending emails
-	#Given I send email from 'customer@voxtron.lab' to 'support@voxtron.lab'.
 	Given I send email from customer to client.
 
 	#logging in to webclient
@@ -108,7 +107,6 @@ Scenario: 001 Status Testing of Waiting Monitor and Activity Monitor after Recei
 	And I enter comments 'Email has been deleted' in the Remarks input bar.
 	And I click on commit button to del the email.
 
-	#When I click on the Activity Monitor button in webclient.
 	When I ensure that 'Dummy Agent1' has status 'Free'.
 	And I close the Activity Monitor tab.
 

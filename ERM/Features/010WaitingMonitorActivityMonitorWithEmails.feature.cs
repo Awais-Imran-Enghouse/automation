@@ -79,15 +79,9 @@ namespace ERM.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("001 Status Testing of Waiting Monitor and Activity Monitor after Receiving Email." +
             "")]
-        [NUnit.Framework.CategoryAttribute("DeletingRoutingRules")]
-        [NUnit.Framework.CategoryAttribute("DeletingQueues")]
-        [NUnit.Framework.CategoryAttribute("DeletingAgent")]
         public virtual void _001StatusTestingOfWaitingMonitorAndActivityMonitorAfterReceivingEmail_()
         {
-            string[] tagsOfScenario = new string[] {
-                    "DeletingRoutingRules",
-                    "DeletingQueues",
-                    "DeletingAgent"};
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("001 Status Testing of Waiting Monitor and Activity Monitor after Receiving Email." +
                     "", null, tagsOfScenario, argumentsOfScenario, this._featureTags);

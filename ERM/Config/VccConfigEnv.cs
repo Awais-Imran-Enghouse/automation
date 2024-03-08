@@ -18,5 +18,7 @@ namespace ERM.Config
         public string MailboxName { get; set; }
         public string CustomerEmailAddress { get; set; }
         public string ClientEmailAddress { get; set; }
+        public string Server { get; set; }
+        public string ServerPassword { get; set;}
     }
 }

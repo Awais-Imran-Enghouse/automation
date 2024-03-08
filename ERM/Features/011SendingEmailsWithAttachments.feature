@@ -6,8 +6,8 @@ A short summary of the feature
 @DeletingRoutingRules @DeletingQueues @DeletingAgent
 Scenario: 001 Sending emails with attachments.
 #	
-
-##	#adding queue
+#
+###	#adding queue
 	Given I am at VCC login page.
 	When I enter credentials.
 	Then I get logged in.
@@ -86,7 +86,7 @@ Scenario: 001 Sending emails with attachments.
 	And I click the OK button on the profile tab.
 ##
 ##	#sending emails
-	#Given I send email from 'customer@voxtron.lab' to 'support@voxtron.lab' with attachment.
+	
 	Given I send email from customer to client with attachment.	
 
 	#logging in to webclient

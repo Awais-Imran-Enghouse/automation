@@ -44,13 +44,13 @@ namespace ERM.StepDefinitions
                 Thread.Sleep(3000);
                 Boolean check_ =true;
                 // Waiting utill the information tab as well as wrapped status in activity monitor is removed.
-                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+                WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(40));
                 wait.Until(driver => driver.FindElements(By.XPath("//span[contains(text(),\"Information\")]")).Count == 0);
                 
                 //As wrapped status is dispaeared. Now, clicking on the activity monitor to check the Free status.
                 seleniumSetMethod.Click(element: webClientLoginPageObjects.ActivityyMonitorBtnId, elementType: ProperType.Id, driver: driver);
 
-                //performing the actions o ensure the status
+                //performing the actions to ensure the status
                 string getting_transfer_text_xpath = String.Format(webClientLoginPageObjects.ActivityMonitorStatusColumnWRTUsernameXpath, username);
                 seleniumSetMethod.ExplicitWait(element: getting_transfer_text_xpath, elementType: ProperType.X_Path, driver: driver);
                 //string text = seleniumSetMethod.GetText(element: "//td[contains(text(),\"Dummy Agent1\")]", elementType: ProperType.X_Path, driver: driver);

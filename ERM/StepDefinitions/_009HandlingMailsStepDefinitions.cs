@@ -280,8 +280,9 @@ namespace ERM.StepDefinitions
             string fromMail_ = ermModuleObjects.CustomertEmailAddress;
             //string toMail_ = "support@voxtron.lab";
             string toMail_ = ermModuleObjects.ClientEmailAddress;
-            string password = "diadora.2";
+            //string password = "diadora.2";
             //string password = "jto";
+            string password = ermModuleObjects.ServerPassword;
             string subject = "queue2 " + DateTime.Now.ToString("MM/dd/yyyy HH:mm");
             string body = "<h3> From VS </h3>";
 
@@ -292,8 +293,9 @@ namespace ERM.StepDefinitions
             mail.Body = body;
             mail.IsBodyHtml = true;
 
-            SmtpClient smtp = new SmtpClient("pkrd-aim-vcc.vcc.bel.rd.eilab.biz", 25);
-            //SmtpClient smtp = new SmtpClient("BE-JWI-W16-03.vcc.bel.rd.eilab.biz", 587);
+            //SmtpClient smtp = new SmtpClient("pkrd-aim-vcc.vcc.bel.rd.eilab.biz", 25);
+            //SmtpClient smtp = new SmtpClient("BE-JWI-W16-03.vcc.bel.rd.eilab.biz", 25);
+            SmtpClient smtp = new SmtpClient(ermModuleObjects.Server, 25);
             smtp.UseDefaultCredentials = false;
             smtp.EnableSsl = false;
             smtp.Credentials = new NetworkCredential(fromMail_, password);
@@ -319,13 +321,12 @@ namespace ERM.StepDefinitions
         [Then(@"I click on the Mark As Handled button\.")]
         public void ThenIClickOnTheMarkAsHandledButton_()
         {
-            Thread.Sleep(40000);
+            Thread.Sleep(10000);
             
             driver.SwitchTo().Frame(1);
             seleniumSetMethod.Click(element: webClientLoginPageObjects.MarkAsHandledBtnXpath, elementType: ProperType.X_Path, driver: driver);
             //seleniumSetMethod.Click(element: "//*[@id=\"divInteraction\"]/div[1]/input[5]", elementType: ProperType.X_Path, driver: driver);
-            
-
+          
 
         }
 

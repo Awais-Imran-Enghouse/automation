@@ -4,7 +4,7 @@ A short summary of the feature
 
 @DeletingRoutingRules @DeletingQueues @DeletingAgent
 Scenario: 001 Verification of Sending and Receiving Emails.
-##	
+####	
 #	#adding queue
 	Given I am at VCC login page.
 	When I enter credentials.
@@ -13,15 +13,12 @@ Scenario: 001 Verification of Sending and Receiving Emails.
 	When I click on Queue module.
 	When I clock on Add New Queue button.
 	When I enter 'Dummy Queue1'.
-	#When I check the Default checkbox.
 	When I click on the profiles tab.
 	When I check on the Voxtron Agent checkbox.
 	When I click on the Ok button.
 
 	#......
 	Given I am at VCC login page.
-	#When I enter credentials.
-	#Then I get logged in.
 	When I click on CCSupport.
 	When I click on Queue module.
 	When I clock on Add New Queue button.
@@ -81,7 +78,6 @@ Scenario: 001 Verification of Sending and Receiving Emails.
 	And I click the OK button on the profile tab.
 
 #	#sending emails
-	#Given I send email from 'customer@voxtron.lab' to 'support@voxtron.lab'.
 	Given I send email from customer to client.
 ####
 ####	#receiving Email and Marking as Handled
@@ -95,11 +91,11 @@ Scenario: 001 Verification of Sending and Receiving Emails.
 	And I click on the Mark As Handled button.
 	And I enter comments 'Email has been handled' in the Remarks input bar.
 	And I click on commit button to handle the email.
-
-##	#sending emails
-	#Given I send email from 'customer@voxtron.lab' to 'support@voxtron.lab'.
+#
+###	#sending emails
+#	#Given I send email from 'customer@voxtron.lab' to 'support@voxtron.lab'.
 	Given I send email from customer to client.
-
+#
 	#receiving Email and Marking as Deleted
 	Given I am at the Web Client login page.
 	When When I enter username.

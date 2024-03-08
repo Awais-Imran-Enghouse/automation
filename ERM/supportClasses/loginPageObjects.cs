@@ -164,6 +164,8 @@ namespace ERM.supportClasses
         public string MailBoxName { get; set; }
         public string ClientEmailAddress { get; set; }
         public string CustomertEmailAddress { get; set; }
+        public string Server { get; set; }
+        public string ServerPassword { get; set; }
 
         public ErmModuleObjects()
         {
@@ -172,6 +174,8 @@ namespace ERM.supportClasses
             MailBoxName = config.MailboxName;
             ClientEmailAddress = config.ClientEmailAddress;
             CustomertEmailAddress = config.CustomerEmailAddress;
+            Server = config.Server;
+            ServerPassword = config.ServerPassword;
         }
         public string ErmModuleXpath = "(//td[@aria-label=\"Email response management\"]/following-sibling::td)[1]/a";
         public string MailBoxesTabId = "ERM_01_MessageBoxes";
@@ -265,7 +269,8 @@ namespace ERM.supportClasses
         public string ActivityMonitorCloseBtnXpath = "//span[@id=\"ui-id-8\"]/following-sibling::button[@title=\"close\"]";
         public string WaitingMonitorCloseBtnXpath = "(//button[@title=\"close\"])[1]";
         public string AcceptEmailBtnXpath = "//div[@id=\"divContent\"]/div[@id=\"divContactInformation\"]/div[4]/div/input[1]";
-        public string MarkAsHandledBtnXpath = "//*[@id=\"divInteraction\"]/div[1]/input[5]";
+        //public string MarkAsHandledBtnXpath = "//*[@id=\"divInteraction\"]/div[1]/input[5]";
+        public string MarkAsHandledBtnXpath = "//input[@title=\"Mark as handled (Alt + Shift + H)\"]";
         public string RemarkInputBarId = "remarkPlain";
         public string EmailHandledCommitBtnXpath = "(//input[@title=\"Commit (Alt + Shift + Q)\"])[1]";
         public string EmailDelBtnXpath = "//input[@aria-label=\"Delete email (Alt + Shift + X)\"]";
