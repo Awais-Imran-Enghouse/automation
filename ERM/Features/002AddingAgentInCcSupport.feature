@@ -1,4 +1,5 @@
-﻿Feature: 002AddingAgentInCcSupport
+﻿@002AddingAgentInCcSupport
+Feature: 002AddingAgentInCcSupport
 
 A short summary of the feature
 
@@ -13,6 +14,6 @@ Scenario: Adding user in CCSupport.
 	When I enter Username.
 	And I enter Email Address.
 	And I click on the profile tab.
-	And I click the OK button.
+	And I click the OK button on the profile tab.
 	Then The agent is successfully created.
 	

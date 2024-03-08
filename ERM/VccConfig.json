@@ -1,0 +1,32 @@
+//{
+//  "WebCenterUrl": "http://10.51.28.199/VccWebCenter/",
+//  "CCUserUrl": "http://10.51.28.199/VccWebCenter/?instanceID=f09e0373-5d1d-4af4-98d1-6d8034194bf7&uc=Users",
+//  "CCQueueModuleUrl": "http://10.51.28.199/VccWebCenter/?instanceID=f09e0373-5d1d-4af4-98d1-6d8034194bf7&uc=Queues",
+//  "WebClientUrl": "http://10.51.28.199/webclient_10_0/",
+//  "Username": "superadmin",
+//  "Password": "superadmin",
+//  "ContactCenterName": "CC version 10.1",
+//  "MailboxName": "FAFNIR 10.0",
+//  "CustomerEmailAddress": "jto-erm@vcc.bel.rd.eilab.biz",
+//  "ClientEmailAddress": "jto-erm@vcc.bel.rd.eilab.biz",
+//  "Server": "BE-JWI-W16-03.vcc.bel.rd.eilab.biz",
+//  "ServerPassword": "jto"
+//}
+//if we use the following link, logged in person automatically get logged out, while if we use without "Login" ity does not.
+// "WebCenterUrl": "http://10.51.28.199/VccWebCenter/Login.aspx",
+{
+  "WebCenterUrl": "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter",
+  "CCUserUrl": "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=76cf08c6-f261-4202-a96b-0c07b4254aca&uc=Users",
+  "CCQueueModuleUrl": "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/VccWebCenter/?instanceID=76cf08c6-f261-4202-a96b-0c07b4254aca&uc=Queues",
+  "WebClientUrl": "http://pkrd-aim-vcc.vcc.bel.rd.eilab.biz/webclient/",
+  "Username": "superadmin",
+  "Password": "superadmin",
+  "ContactCenterName": "CCSUPPORT",
+  "MailboxName": "Support",
+  "CustomerEmailAddress": "customer@voxtron.lab",
+  "ClientEmailAddress": "support@voxtron.lab",
+  "Server": "pkrd-aim-vcc.vcc.bel.rd.eilab.biz",
+  "ServerPassword": "diadora.2"
+}
+
+

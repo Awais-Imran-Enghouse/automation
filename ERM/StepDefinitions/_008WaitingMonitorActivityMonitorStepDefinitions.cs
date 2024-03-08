@@ -29,23 +29,28 @@ namespace ERM.StepDefinitions
         [When(@"I check the Enable activity monitor\.")]
         public void WhenICheckTheEnableActivityMonitor_()
         {
-            // bool check_box = driver.FindElement(By.XPath(ccSupportModuleObject.ActivityMonitorChkBoxXpath)).Selected;
-            //if (check_box==false)
-            //{
-            //    seleniumSetMethod.Click(element: ccSupportModuleObject.ActivityMonitorChkBoxXpath, elementType: ProperType.X_Path, driver: driver);
-            //}
-            //Console.WriteLine(check_box);
-            seleniumSetMethod.CheckRadioBtn(element: ccSupportModuleObject.ActivityMonitorChkBoxXpath, elementType: ProperType.X_Path, driver: driver);
-            Thread.Sleep(10000);
-            //seleniumSetMethod.UncheckRadioBtn(element: ccSupportModuleObject.ActivityMonitorChkBoxXpath, elementType: ProperType.X_Path, driver: driver);
-            //Thread.Sleep(10000);
+            
+            bool sel = seleniumSetMethod.SelectOrNot(element: ccSupportModuleObject.ActivityMoniorIsSelectOrNotXpath, elementType: ProperType.X_Path, driver: driver);
+            Console.WriteLine(sel);
+            if (sel == false)
+            {
+                //Thread.Sleep(10000);
+                seleniumSetMethod.ExplicitWait(element: ccSupportModuleObject.ActivityMonitorChkBoxXpath, elementType: ProperType.X_Path, driver: driver);
+                seleniumSetMethod.Click(element: ccSupportModuleObject.ActivityMonitorChkBoxXpath, elementType: ProperType.X_Path, driver: driver);
+                //Thread.Sleep(10000);
+                bool after_click = seleniumSetMethod.SelectOrNot(element: "//input[@id=\"Permission2\"]", elementType: ProperType.X_Path, driver: driver);
+                Console.WriteLine(after_click);
+            }
+            
 
         }
 
         [When(@"I click the OK button on permission tab\.")]
         public void WhenIClickTheOKButtonOnPermissionTab_()
         {
+            Thread.Sleep(10000);
             seleniumSetMethod.Click(element: ccSupportModuleObject.PermissionTabOkButtonId, elementType: ProperType.Id, driver: driver);
+            
         }
 
         [When(@"I click on the Activity Monitor button in webclient\.")]
@@ -62,13 +67,21 @@ namespace ERM.StepDefinitions
             seleniumSetMethod.ExplicitWait(element: webClientLoginPageObjects.ActivityMonitorCloseBtnXpath, elementType: ProperType.X_Path, driver: driver);
             seleniumSetMethod.Click(element: webClientLoginPageObjects.ActivityMonitorCloseBtnXpath, elementType: ProperType.X_Path, driver: driver);
         }
-    
+
 
         [When(@"I check the Enable waiting monitor\.")]
         public void WhenICheckTheEnableWaitingMonitor_()
         {
-            seleniumSetMethod.CheckRadioBtn(element: ccSupportModuleObject.WaitingMonitorChkBoxXpath, elementType: ProperType.X_Path, driver: driver);
-            Thread.Sleep(5000);
+            bool sel = seleniumSetMethod.SelectOrNot(element: ccSupportModuleObject.WaitingMoniorIsSelectOrNotXpath, elementType: ProperType.X_Path, driver: driver);
+            Console.WriteLine(sel);
+            if (sel == false)
+            {
+                //Thread.Sleep(5000);
+                seleniumSetMethod.ExplicitWait(element: ccSupportModuleObject.WaitingMonitorChkBoxXpath, elementType: ProperType.X_Path, driver: driver);
+                seleniumSetMethod.Click(element: ccSupportModuleObject.WaitingMonitorChkBoxXpath, elementType: ProperType.X_Path, driver: driver);
+                //Thread.Sleep(5000);
+
+            }
         }
 
         [When(@"I click on the Waiting Monitor button\.")]
@@ -81,8 +94,8 @@ namespace ERM.StepDefinitions
         [When(@"I close the Waiting Monitor tab\.")]
         public void WhenICloseTheWaitingMonitorTab_()
         {
-            seleniumSetMethod.ExplicitWait(element: webClientLoginPageObjects.WaitingMonittorBtnId, elementType: ProperType.Id, driver: driver);
-            seleniumSetMethod.Click(element: webClientLoginPageObjects.WaitingMonittorBtnId, elementType: ProperType.Id, driver: driver);
+            seleniumSetMethod.ExplicitWait(element: webClientLoginPageObjects.WaitingMonitorCloseBtnXpath, elementType: ProperType.X_Path, driver: driver);
+            seleniumSetMethod.Click(element: webClientLoginPageObjects.WaitingMonitorCloseBtnXpath, elementType: ProperType.X_Path, driver: driver);
         }
     }
 }

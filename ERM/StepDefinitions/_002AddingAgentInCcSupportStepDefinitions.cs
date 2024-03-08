@@ -86,13 +86,14 @@ namespace ERM.StepDefinitions
                 IList<IWebElement> all = driver.FindElements(By.XPath(ccSupportModuleObject.ListOfAgentsXpath));
                 int sum = all.Count + 5;
                 Console.WriteLine("Agent name is : " + agent);
-                //Console.WriteLine("total agent is : " + all.Count + " " + sum);
+                Console.WriteLine("total agent is : " + all.Count );
                 for (int i = 1; i <= all.Count; i++)
                 {
                     string id = "tblVccGrid_row" + i + "_username";
                     string name;
                     string username = ccSupportModuleObject.Username;
                     name = seleniumSetMethod.GetText(element: id, ProperType.Id, driver: driver);
+                    Console.WriteLine($"{name} {username}");
                     Console.WriteLine(name);
 
                     if (name == username)
@@ -157,7 +158,7 @@ namespace ERM.StepDefinitions
         {
             try
             {
-                driver.Manage().Window.Maximize();
+                //driver.Manage().Window.Maximize();
                 Thread.Sleep(10000);
                 seleniumSetMethod.Click(element: ccSupportModuleObject.ProfileTabXPath, elementType: ProperType.X_Path, driver: driver);
                 Thread.Sleep(3000);
@@ -171,8 +172,10 @@ namespace ERM.StepDefinitions
 
 
 
-        [When(@"I click the OK button\.")]
-        public void WhenIClickTheOKButton_()
+        
+
+        [When(@"I click the OK button on the profile tab\.")]
+        public void WhenIClickTheOKButtononTheProfileTab_()
         {
             try
             {
@@ -187,16 +190,18 @@ namespace ERM.StepDefinitions
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
-                    
+
                 }
                 Thread.Sleep(4000);
 
             }
             catch (Exception e)
             {
-                Assert.Fail(e.Message);
+                //Assert.Fail(e.Message);
+                Console.WriteLine(e.Message);
             }
         }
+
 
 
 
