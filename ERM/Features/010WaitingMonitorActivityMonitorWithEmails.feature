@@ -2,7 +2,6 @@
 Feature: 010WaitingMonitorActivityMonitorWithEmails
 
 A short summary of the feature
-
 @DeletingRoutingRules @DeletingQueues @DeletingAgent
 Scenario: 001 Status Testing of Waiting Monitor and Activity Monitor after Receiving Email.
 #	

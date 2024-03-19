@@ -303,67 +303,67 @@ this.ScenarioInitialize(scenarioInfo);
 #line 86
  testRunner.And("I click the OK button on the profile tab.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 90
+#line 89
  testRunner.Given("I send email from customer to client.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 93
+#line 92
  testRunner.Given("I am at the Web Client login page.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 94
+#line 93
  testRunner.When("When I enter username.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 95
+#line 94
  testRunner.And("I click on OK button on webclient login page.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 96
+#line 95
  testRunner.When("I checked \'Dummy Queue2\'.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 97
+#line 96
  testRunner.And("I click on OK button again on webclient login page.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 98
+#line 97
  testRunner.Then("I get logged in web client.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 99
+#line 98
  testRunner.When("I click on the Activity Monitor button in webclient.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 100
+#line 99
  testRunner.And("I ensure that \'Dummy Agent1\' has status \'Transferring\'.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 101
+#line 100
  testRunner.And("I close the Activity Monitor tab.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 103
+#line 102
  testRunner.Then("I click the Accept button.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 104
+#line 103
  testRunner.When("I click on the Activity Monitor button in webclient.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 105
+#line 104
  testRunner.And("I ensure that \'Dummy Agent1\' has status \'Conversation\'.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 106
+#line 105
  testRunner.And("I close the Activity Monitor tab.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 107
+#line 106
  testRunner.Then("I click on the Delete button.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 108
+#line 107
  testRunner.And("I enter comments \'Email has been deleted\' in the Remarks input bar.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 109
+#line 108
  testRunner.And("I click on commit button to del the email.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 112
+#line 110
  testRunner.When("I ensure that \'Dummy Agent1\' has status \'Free\'.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 113
+#line 111
  testRunner.And("I close the Activity Monitor tab.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 115
+#line 113
  testRunner.When("I click on the Waiting Monitor button.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 116
+#line 114
  testRunner.And("I close the Waiting Monitor tab.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }

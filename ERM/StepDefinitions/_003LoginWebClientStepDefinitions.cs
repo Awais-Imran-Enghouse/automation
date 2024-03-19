@@ -34,6 +34,7 @@ namespace ERM.StepDefinitions
         [When(@"When I enter username\.")]
         public void WhenWhenIEnterUsername_()
         {
+            seleniumSetMethod.ExplicitWait(element: webClientLoginPageObjects.UsernameInputbarId, elementType: ProperType.X_Path, driver: driver);
             seleniumSetMethod.EnterText(element:webClientLoginPageObjects.UsernameInputbarId,elementType:ProperType.Id,value:ccSupportModuleObject.Username, driver:driver);
             Thread.Sleep(5000);
         }
@@ -41,6 +42,7 @@ namespace ERM.StepDefinitions
         [When(@"I click on OK button on webclient login page\.")]
         public void WhenIClickOnOKButton_()
         {
+            seleniumSetMethod.ExplicitWait(element: webClientLoginPageObjects.OkButtonXpath, elementType: ProperType.X_Path, driver: driver);
             seleniumSetMethod.Click(element:webClientLoginPageObjects.OkButtonXpath, elementType:ProperType.X_Path, driver:driver);
             Thread.Sleep(5000);
             //seleniumSetMethod.Click(element: webClientLoginPageObjects.AlreadyLoggedButtonId, elementType: ProperType.Id, driver: driver);

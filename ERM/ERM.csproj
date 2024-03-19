@@ -30,6 +30,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="FilesToBeAttachedWithEmail\*">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="VccConfig.DevDevice.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
