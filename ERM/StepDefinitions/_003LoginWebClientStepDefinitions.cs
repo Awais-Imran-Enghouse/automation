@@ -34,7 +34,7 @@ namespace ERM.StepDefinitions
         [When(@"When I enter username\.")]
         public void WhenWhenIEnterUsername_()
         {
-            seleniumSetMethod.ExplicitWait(element: webClientLoginPageObjects.UsernameInputbarId, elementType: ProperType.X_Path, driver: driver);
+            seleniumSetMethod.ExplicitWait(element: webClientLoginPageObjects.UsernameInputbarId, elementType: ProperType.Id, driver: driver);
             seleniumSetMethod.EnterText(element:webClientLoginPageObjects.UsernameInputbarId,elementType:ProperType.Id,value:ccSupportModuleObject.Username, driver:driver);
             Thread.Sleep(5000);
         }

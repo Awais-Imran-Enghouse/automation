@@ -78,9 +78,11 @@ namespace ERM.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Adding user in CCSupport and login to the Web client with correct credentials.")]
+        [NUnit.Framework.CategoryAttribute("DeletingAgent")]
         public virtual void AddingUserInCCSupportAndLoginToTheWebClientWithCorrectCredentials_()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "DeletingAgent"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Adding user in CCSupport and login to the Web client with correct credentials.", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 6

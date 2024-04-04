@@ -84,9 +84,9 @@ Scenario: 001 Status Testing of Waiting Monitor and Activity Monitor after Recei
 	And I check the Voxtron Agent radio button.
 	And I click the OK button on the profile tab.
 #
-##	#sending emails
+###	#sending emails
 	Given I send email from customer to client.
-
+#
 	#logging in to webclient
 	Given I am at the Web Client login page.
 	When When I enter username.
