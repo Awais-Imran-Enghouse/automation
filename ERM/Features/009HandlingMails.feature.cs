@@ -78,15 +78,9 @@ namespace ERM.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("001 Verification of Sending and Receiving Emails.")]
-        [NUnit.Framework.CategoryAttribute("DeletingRoutingRules")]
-        [NUnit.Framework.CategoryAttribute("DeletingQueues")]
-        [NUnit.Framework.CategoryAttribute("DeletingAgent")]
         public virtual void _001VerificationOfSendingAndReceivingEmails_()
         {
-            string[] tagsOfScenario = new string[] {
-                    "DeletingRoutingRules",
-                    "DeletingQueues",
-                    "DeletingAgent"};
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("001 Verification of Sending and Receiving Emails.", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 6

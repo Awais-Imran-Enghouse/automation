@@ -2,7 +2,7 @@
 Feature: 012SendingEmailWithLargeAttachement
 
 A short summary of the feature
-#@DeletingRoutingRules @DeletingQueues @DeletingAgent
+@DeletingRoutingRules @DeletingQueues @DeletingAgent
 Scenario: 001 Sending emails with large attachments.
 
 ###	#adding queue
@@ -48,7 +48,6 @@ Scenario: 001 Sending emails with large attachments.
 	Given I am at VCC login page.
 	When I click the ERMSupport.
 	And I click on the mailboxes.
-	#And I click on the edit button of "Support".
 	And I click on the edit button of mailbox.
 	And I click on the Routing Routes.
 	And I click on the Add New Rules button.

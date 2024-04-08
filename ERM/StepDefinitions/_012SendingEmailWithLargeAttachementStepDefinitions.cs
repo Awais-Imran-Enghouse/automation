@@ -43,7 +43,7 @@ namespace ERM.StepDefinitions
 
 
             System.Net.Mail.Attachment attachment;
-            attachment = new System.Net.Mail.Attachment("..\\..\\..\\FilesToBeAttachedWithEmail\\largeEmails.zip");
+            attachment = new System.Net.Mail.Attachment(".\\FilesToBeAttachedWithEmail\\largeEmails.zip");
             mail.Attachments.Add(attachment);
             mail.From = new MailAddress(fromMail_);
             mail.To.Add(toMail_);
