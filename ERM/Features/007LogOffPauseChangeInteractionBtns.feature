@@ -21,8 +21,6 @@ Scenario: 001 Verification of Log Off button and pause button.
 
 	##creating second queue:
 	Given I am at VCC login page.
-	#When I enter credentials.
-	#Then I get logged in.
 	When I click on CCSupport.
 	When I click on Queue module.
 	When I clock on Add New Queue button.
@@ -61,17 +59,14 @@ Scenario: 001 Verification of Log Off button and pause button.
 	Given I am at the Web Client login page.
 	When When I enter username.
 	And I click on OK button on webclient login page.
-	##to code
 	And I checked 'Dummy Queue1'.
-#	#
 	And I click on OK button again on webclient login page.
 	Then I get logged in web client.
-	##to code
 	When I click the Pause button.
 	Then It is successfully paused.
 	When I click on the logoff button.
 	Then I get logged off. 
-	#
+	
 
 	#logging into web client for Dummy Agent2, which is not given last agent logout functionality.
 	Given I am at the Web Client login page.

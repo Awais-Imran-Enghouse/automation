@@ -43,10 +43,12 @@ namespace ERM.StepDefinitions
 
 
             System.Net.Mail.Attachment attachment;
-            attachment = new System.Net.Mail.Attachment("..\\..\\..\\FilesToBeAttachedWithEmail\\testing.txt");
+            attachment = new System.Net.Mail.Attachment(".\\FilesToBeAttachedWithEmail\\testing.txt");
+            //"..\\..\\..\\FilesToBeAttachedWithEmail\\testing.txt"
             mail.Attachments.Add(attachment);
             mail.From = new MailAddress(fromMail_);
-            mail.To.Add(toMail_);
+            //mail.To.Add(toMail_);
+            mail.To.Add("eptica@voxtron.lab");
             mail.Subject = subject;
             mail.Body = body;
             mail.IsBodyHtml = true;

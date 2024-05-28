@@ -333,5 +333,39 @@ namespace ConsoleApp1
 
         }
 
+        public static int CountMatching(string element, ProperType elementType, IWebDriver driver)
+        {
+            /*
+             This method find the total number of macthes of an element
+             */
+
+            if (elementType == ProperType.Id)
+            {
+
+                int count_ = driver.FindElements(By.Id(element)).Count;
+                return count_;
+
+            }
+            else if (elementType == ProperType.Name)
+            {
+             
+                int count_ = driver.FindElements(By.Name(element)).Count;
+                return count_;
+
+            }
+            else if (elementType == ProperType.X_Path)
+            {
+
+                int count_ = driver.FindElements(By.XPath(element)).Count;
+                return count_;
+            }
+            else
+            {
+                Assert.Fail();
+                return -1;
+            }
+
+        }
+
     }
 }

@@ -50,7 +50,6 @@ Scenario: 001 Sending emails with attachments.
 	Given I am at VCC login page.
 	When I click the ERMSupport.
 	And I click on the mailboxes.
-	#And I click on the edit button of "Support".
 	And I click on the edit button of mailbox.
 	And I click on the Routing Routes.
 	And I click on the Add New Rules button.
@@ -85,11 +84,11 @@ Scenario: 001 Sending emails with attachments.
 	And I check the Voxtron Agent radio button.
 	And I click the OK button on the profile tab.
 ##
-##	#sending emails
-	
+###	#sending emails
+#	
 	Given I send email from customer to client with attachment.	
-
-	#logging in to webclient
+#
+#	#logging in to webclient
 	Given I am at the Web Client login page.
 	When When I enter username.
 	And I click on OK button on webclient login page.

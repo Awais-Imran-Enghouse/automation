@@ -4,8 +4,8 @@ A short summary of the feature
 
 @DeletingRoutingRules @DeletingQueues @DeletingAgent
 Scenario: 001 Verification of Sending and Receiving Emails.
-####	
-#	#adding queue
+##	
+##	#adding queue
 	Given I am at VCC login page.
 	When I enter credentials.
 	Then I get logged in.
@@ -95,8 +95,8 @@ Scenario: 001 Verification of Sending and Receiving Emails.
 ###	#sending emails
 #	#Given I send email from 'customer@voxtron.lab' to 'support@voxtron.lab'.
 	Given I send email from customer to client.
-#
-	#receiving Email and Marking as Deleted
+##
+#	#receiving Email and Marking as Deleted
 	Given I am at the Web Client login page.
 	When When I enter username.
 	And I click on OK button on webclient login page.

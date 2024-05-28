@@ -288,4 +288,36 @@ namespace ERM.supportClasses
         //public string url = "http://pkrd-akh-vcct1.vcc.bel.rd.eilab.biz/webclient/";
     }
 
+    class MailManagementObjects
+    {
+        public string MailManagementXpath = "//li/a[contains(text(),\"Mailbox management\")]";
+        public string MailBoxName { get; set; }
+        public string MailBoxXpath { get; set; }
+        public string MailBoxName_;
+        public VccConfigEnv config { get; set; }
+        public MailManagementObjects()
+        {
+            var json = System.IO.File.ReadAllText("./vccConfig.json");
+            config = JsonConvert.DeserializeObject<VccConfigEnv>(json);
+            MailBoxName = config.MailboxName;
+            MailBoxXpath = String.Format("//h2[contains(text(),\"{0}\")]", MailBoxName);
+
+        }
+
+
+        public string AllMailBoxesXpath = "//ul[@class='messagebox-states-tree']/li";
+        public string WaitingFolderXpath = " //span[contains(text(),\"Waiting\")]";
+        public string CompleteWaitingFolderXpath = "//span[contains(text(),\"Waiting ({0})\")]";
+        public string EmailRowsXpath = "//tr[@role=\"row\"]";
+
+        public string EmailSubjectXpath = "(//div/span[contains(text(),\"Subject\")])[1]";
+        public string EmailSubjectStringXpath = "(//div/span[contains(text(),\"Subject\")])[1]/following-sibling::span";
+        public string InputQuerySearchBarXpath = "//input[@role=\"textbox\"]";
+        public string Query1PinXpath = "//span[contains(text(),\"Query 1\")]/following-sibling::span";
+        public string AllQueriesXpath = "//span[contains(text(),\"Query\")]/following-sibling::span";
+
+        public string SearchButtonXpath = "//span[@title=\"Search\"]";
+
+    }
+
 }
