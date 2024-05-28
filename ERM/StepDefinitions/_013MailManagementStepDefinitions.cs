@@ -94,10 +94,10 @@ namespace ERM.StepDefinitions
             
         }
 
-        [Then(@"I noticed that toal number of emails in Waiting folder is increased by (.*)\.")]
+        [Then(@"I noticed that total number of emails in Waiting folder is increased by (.*)\.")]
         public void ThenINoticedThatToalNumberOfEmailsInWaitingFolderIsIncreasedBy_(int p0)
         {
-            //clicking on waiting folder x path
+            //clicking on waiting folder
             driver.SwitchTo().Frame(0);
             seleniumSetMethod.ExplicitWait(element: mailManagementObjects.WaitingFolderXpath, elementType: ProperType.X_Path, driver: driver);
             seleniumSetMethod.Click(element: mailManagementObjects.WaitingFolderXpath, elementType: ProperType.X_Path, driver: driver);
@@ -288,6 +288,16 @@ namespace ERM.StepDefinitions
             driver.SwitchTo().DefaultContent();
         }
 
+
+        [When(@"I enter the name ""([^""]*)"" of new Routing Rule\.")]
+        public void WhenIEnterTheNameOfNewRoutingRule_(string route_name)
+        {
+            seleniumSetMethod.ExplicitWait(element: ermModuleObjects.AddNewRuleInpNameId, elementType: ProperType.Id, driver: driver);
+            seleniumSetMethod.EnterText(element: ermModuleObjects.AddNewRuleInpNameId, elementType: ProperType.Id, driver: driver, value: route_name);
+
+        }
+
+
         //[When(@"I click on the Waiting folder\.")]
         //public void WhenIClickOnTheWaitingFolder_()
         //{
@@ -318,22 +328,99 @@ namespace ERM.StepDefinitions
         //    throw new PendingStepException();
         //}
 
-        //[When(@"I select Move to Folder in Select Action drop down\.")]
-        //public void WhenISelectMoveToFolderInSelectActionDropDown_()
-        //{
-        //    throw new PendingStepException();
-        //}
+        [When(@"I select Move to Folder in Select Action drop down\.")]
+        public void WhenISelectMoveToFolderInSelectActionDropDown_()
+        {
+            seleniumSetMethod.ExplicitWait(element: ermModuleObjects.SelectActionDropDownXpath, elementType: ProperType.X_Path, driver: driver);
+            seleniumSetMethod.SelectDropDown(element: ermModuleObjects.SelectActionDropDownXpath, dropDownText: "Move to folder", elementType: ProperType.X_Path, driver: driver);
 
-        //[When(@"I select new in Folder drop down\.")]
-        //public void WhenISelectNewInFolderDropDown_()
-        //{
-        //    throw new PendingStepException();
-        //}
+        }
+
+        [When(@"I select new in Folder drop down\.")]
+        public void WhenISelectNewInFolderDropDown_()
+        {
+            seleniumSetMethod.ExplicitWait(element: ermModuleObjects.SelectActionDropDownXpath, elementType: ProperType.X_Path, driver: driver);
+            seleniumSetMethod.SelectDropDown(element: ermModuleObjects.SelectFolderDropDownXpath, dropDownText: "new", elementType: ProperType.X_Path, driver: driver);
+            Thread.Sleep(15000);
+        }
 
         //[Given(@"I find the sent email in the new folder\.")]
         //public void GivenIFindTheSentEmailInTheNewFolder_()
         //{
         //    throw new PendingStepException();
         //}
+
+        [When(@"I noted the number of emails present in New folder\.")]
+        public void WhenINotedTheNumberOfEmailsPresentInNewFolder_()
+        {
+            driver.SwitchTo().Frame(0);
+            seleniumSetMethod.ExplicitWait(element: mailManagementObjects.NewFolderXpath, elementType: ProperType.X_Path, driver: driver);
+            seleniumSetMethod.Click(element: mailManagementObjects.NewFolderXpath, elementType: ProperType.X_Path, driver: driver);
+            Thread.Sleep(5000);
+
+
+            string waiting_folder_txt_ = seleniumSetMethod.GetText(element: mailManagementObjects.NewFolderXpath, elementType: ProperType.X_Path, driver: driver);
+
+            // regex method to Find integers matches
+            string pattern = @"\d+";
+
+            MatchCollection matches = Regex.Matches(waiting_folder_txt_, pattern);
+
+            // Print the matches
+            foreach (Match match in matches)
+            {
+                Console.WriteLine(match.Value);
+                numberofEmails = int.Parse(match.Value);
+
+            }
+            Console.WriteLine(numberofEmails);
+            Console.WriteLine(NumberofEmails);
+            driver.SwitchTo().DefaultContent();
+        }
+
+        [Then(@"I noticed that total number of emails in New folder is increased by (.*)\.")]
+        public void ThenINoticedThatTotalNumberOfEmailsInNewFolderIsIncreasedBy_(int p0)
+        {
+            //clicking on waiting folder
+            driver.SwitchTo().Frame(0);
+            seleniumSetMethod.ExplicitWait(element: mailManagementObjects.NewFolderXpath, elementType: ProperType.X_Path, driver: driver);
+            seleniumSetMethod.Click(element: mailManagementObjects.NewFolderXpath, elementType: ProperType.X_Path, driver: driver);
+            Thread.Sleep(12000);
+
+            //refreshing the page, 
+            driver.Navigate().Refresh();
+            //clicking the mail box
+            driver.SwitchTo().Frame(0);
+            seleniumSetMethod.ExplicitWait(element: mailManagementObjects.MailBoxXpath, elementType: ProperType.X_Path, driver: driver);
+            seleniumSetMethod.Click(element: mailManagementObjects.MailBoxXpath, elementType: ProperType.X_Path, driver: driver);
+            Thread.Sleep(10000);
+
+            //waiting till the count increased by 1 
+            int NextEmailCount = NumberofEmails + 1;
+            string completeNewFolderXpath = String.Format(mailManagementObjects.CompleteNewFolderXpath, NextEmailCount.ToString());
+            Console.WriteLine(completeNewFolderXpath);
+            seleniumSetMethod.ExplicitWait(element: completeNewFolderXpath, elementType: ProperType.X_Path, driver: driver);
+
+
+
+            string waiting_folder_txt_ = seleniumSetMethod.GetText(element: completeNewFolderXpath, elementType: ProperType.X_Path, driver: driver);
+            string pattern = @"\d+";
+
+            // Find matches
+            MatchCollection matches = Regex.Matches(waiting_folder_txt_, pattern);
+            int new_email_count = 0;
+            // Print the matches
+            foreach (Match match in matches)
+            {
+                Console.WriteLine(match.Value);
+                new_email_count = int.Parse(match.Value);
+
+            }
+            Console.WriteLine(new_email_count);
+            Console.WriteLine(NumberofEmails);
+            Assert.AreEqual(NumberofEmails + 1, new_email_count);
+            driver.SwitchTo().DefaultContent();
+        }
+
     }
 }

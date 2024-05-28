@@ -196,6 +196,7 @@ namespace ERM.supportClasses
         public string ConditionWindowNextBtnXpath = "(//input[@value=\"Next\"])[3]";
         public string AddActionBtnOnActionPopUpXpath = "//span[contains(text(),\"Add action\")]";
         public string SelectActionDropDownXpath = "//*[@id=\"dialogRuleWizard\"]/div[6]/div/div/div[1]/div[2]/select";
+        public string SelectFolderDropDownXpath = "//*[@id=\"dialogRuleWizard\"]/div[6]/div/div/div[2]/div/div[2]/select";
         public string OptionAssignQText = "Assign to queue";
         public string QueueDropDownId = "QUEUE";
         public string AddActionOkBtnXpath = "(//input[@value=\"Ok\"])[2]";
@@ -307,9 +308,10 @@ namespace ERM.supportClasses
 
         public string AllMailBoxesXpath = "//ul[@class='messagebox-states-tree']/li";
         public string WaitingFolderXpath = " //span[contains(text(),\"Waiting\")]";
+        public string NewFolderXpath = "//span[contains(text(),\"New\")]";
         public string CompleteWaitingFolderXpath = "//span[contains(text(),\"Waiting ({0})\")]";
+        public string CompleteNewFolderXpath = "//span[contains(text(),\"New ({0})\")]";
         public string EmailRowsXpath = "//tr[@role=\"row\"]";
-
         public string EmailSubjectXpath = "(//div/span[contains(text(),\"Subject\")])[1]";
         public string EmailSubjectStringXpath = "(//div/span[contains(text(),\"Subject\")])[1]/following-sibling::span";
         public string InputQuerySearchBarXpath = "//input[@role=\"textbox\"]";

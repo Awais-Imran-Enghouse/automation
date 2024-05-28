@@ -1,11 +1,6 @@
-<<<<<<< HEAD
+
 ﻿@MailManagement
 Feature: 013MailManagement
-=======
-﻿Feature: 013MailManagement
->>>>>>> main
-
-A short summary of the feature
 
 @tag1
 Scenario: 001 Mail Box has 16 folders in it.
@@ -25,7 +20,7 @@ Scenario: 002 Number of emails in Waiting folder.
 	And I click the desired mail box and 16 folders will appear.
 	And I noted the number of emails present in Waiting folder.
 	Given I send email from customer to client.
-	Then I noticed that toal number of emails in Waiting folder is increased by 1.
+	Then I noticed that total number of emails in Waiting folder is increased by 1.
 
 Scenario: 003 Searching email using the Filter input bar, verifying the searched result and finding that query under the Search Query list.
 	Given I am at VCC login page.
@@ -74,13 +69,15 @@ Scenario: 007 Moving email from waiting folder to other folders.
 Scenario: 006 Moving the next coming email to New folder using Routing Rules.
 	##assigning Routing Rules to queue
 	Given I am at VCC login page.
+	When I enter credentials.
+	Then I get logged in.
 	When I click the ERMSupport.
+
 	And I click on the mailboxes.
-	#And I click on the edit button of "Support".
 	And I click on the edit button of mailbox.
 	And I click on the Routing Routes.
 	And I click on the Add New Rules button.
-	And I enter the name of queue with a new name.
+	And I enter the name "Tesing Route" of new Routing Rule.
 	And I click the Next button of Add New Rule pop up.
 	And I check Apply New Emails.
 	And I click the Next button of folder window of pop up.
@@ -95,6 +92,11 @@ Scenario: 006 Moving the next coming email to New folder using Routing Rules.
 	And I select new in Folder drop down.
 	And I click the ok button of Add Action window of Add New Rule pop up.
 	And I click the Update button of Add New Rule pop up.
+
+	And I click the MailBox Management.
+	And I click the desired mail box and 16 folders will appear.
+	And I noted the number of emails present in New folder.
 	Given I send email from customer to client.
-	And I find the sent email in the new folder.
+	Then I noticed that total number of emails in New folder is increased by 1.
+
 	

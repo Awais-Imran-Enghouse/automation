@@ -78,11 +78,9 @@ namespace ERM.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Adding user in CCSupport.")]
-        [NUnit.Framework.CategoryAttribute("DeletingAgent")]
         public virtual void AddingUserInCCSupport_()
         {
-            string[] tagsOfScenario = new string[] {
-                    "DeletingAgent"};
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Adding user in CCSupport.", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 7
