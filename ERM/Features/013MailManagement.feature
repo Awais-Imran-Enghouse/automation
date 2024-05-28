@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 ﻿@MailManagement
 Feature: 013MailManagement
+=======
+﻿Feature: 013MailManagement
+>>>>>>> main
 
 A short summary of the feature
 
