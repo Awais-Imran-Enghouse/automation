@@ -47,14 +47,10 @@ namespace ERM
         public Hooks1(IObjectContainer container)
         {
             _container = container;
-             //driver = _driver;
+            
         }
 
-        //private readonly IWebDriver driver;
-        //public Hooks1(IWebDriver driver)
-        //{
-        //    driver = driver;
-        //}
+       
 
         [AfterScenario("@tag1", Order = 0)]
         public void BeforeScenarioWithTag1()
@@ -310,7 +306,14 @@ namespace ERM
             }
         }
 
-        [AfterScenario(Order = 3)]
+
+        [AfterScenario("@DeletingNewRoutingRules", Order = 3)]
+        public void DeletingNewRoutingRules()
+        {
+           
+        }
+
+        [AfterScenario(Order = 4)]
         public void AfterScenario()
         {
             //TODO: implement logic that has to run after executing each scenario

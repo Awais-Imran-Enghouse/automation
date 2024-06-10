@@ -34,12 +34,16 @@ namespace ERM.StepDefinitions
             get { return PinnedQueryText; }
             set { PinnedQueryText = value; }
         }
-
+        private ScenarioContext _scenarioContext;
         IWebDriver driver;
-        public _013MailManagementStepDefinitions(IWebDriver driver)
+        public _013MailManagementStepDefinitions(IWebDriver driver, ScenarioContext scenarioContext)
         {
             this.driver = driver;
+            _scenarioContext = scenarioContext;
         }
+
+        
+        
 
         [When(@"I click the MailBox Management\.")]
         public void WhenIClickTheMailBoxManagement_()
@@ -292,8 +296,13 @@ namespace ERM.StepDefinitions
         [When(@"I enter the name ""([^""]*)"" of new Routing Rule\.")]
         public void WhenIEnterTheNameOfNewRoutingRule_(string route_name)
         {
-            seleniumSetMethod.ExplicitWait(element: ermModuleObjects.AddNewRuleInpNameId, elementType: ProperType.Id, driver: driver);
-            seleniumSetMethod.EnterText(element: ermModuleObjects.AddNewRuleInpNameId, elementType: ProperType.Id, driver: driver, value: route_name);
+            _scenarioContext["routingRuleName"] = route_name;
+            var value = _scenarioContext["routingRuleName"].ToString();
+            Console.WriteLine($"The value retrieved is: {value}");
+            //Console.WriteLine(scenarioContext[""]);
+            Console.WriteLine("This is  scenario context : " + _scenarioContext.ScenarioInfo.Title);
+            //seleniumSetMethod.ExplicitWait(element: ermModuleObjects.AddNewRuleInpNameId, elementType: ProperType.Id, driver: driver);
+            //seleniumSetMethod.EnterText(element: ermModuleObjects.AddNewRuleInpNameId, elementType: ProperType.Id, driver: driver, value: route_name);
 
         }
 

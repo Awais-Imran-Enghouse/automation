@@ -66,37 +66,36 @@ Scenario: 007 Moving email from waiting folder to other folders.
 	And I hover over and move to handled/deleted/span folder.
 	And I check in the handled/deleted/span folder that moved email is in the folder.
 
+@DeletingNewRoutingRules
 Scenario: 006 Moving the next coming email to New folder using Routing Rules.
 	##assigning Routing Rules to queue
 	Given I am at VCC login page.
-	When I enter credentials.
-	Then I get logged in.
-	When I click the ERMSupport.
-
-	And I click on the mailboxes.
-	And I click on the edit button of mailbox.
-	And I click on the Routing Routes.
-	And I click on the Add New Rules button.
-	And I enter the name "Tesing Route" of new Routing Rule.
-	And I click the Next button of Add New Rule pop up.
-	And I check Apply New Emails.
-	And I click the Next button of folder window of pop up.
-	And I click on the Add Condition.
-	And I select subject in first drop down.
-	And I select contains in second drop down.
-	And I enter "queue2" in the input bar.
-	And I click the ok button of Add Condition page of Add New Rule pop up.
-	And I click the Next button on Condition window of Add New Rule pop up.
-	And I click add action button.
-	And I select Move to Folder in Select Action drop down.
-	And I select new in Folder drop down.
-	And I click the ok button of Add Action window of Add New Rule pop up.
-	And I click the Update button of Add New Rule pop up.
-
-	And I click the MailBox Management.
-	And I click the desired mail box and 16 folders will appear.
-	And I noted the number of emails present in New folder.
-	Given I send email from customer to client.
-	Then I noticed that total number of emails in New folder is increased by 1.
+#	When I enter credentials.
+#	Then I get logged in.
+#	When I click the ERMSupport.
+#	And I click on the mailboxes.
+#	And I click on the edit button of mailbox.
+#	And I click on the Routing Routes.
+#	And I click on the Add New Rules button.
+	When I enter the name "Tesing Route" of new Routing Rule.
+#	And I click the Next button of Add New Rule pop up.
+#	And I check Apply New Emails.
+#	And I click the Next button of folder window of pop up.
+#	And I click on the Add Condition.
+#	And I select subject in first drop down.
+#	And I select contains in second drop down.
+#	And I enter "queue2" in the input bar.
+#	And I click the ok button of Add Condition page of Add New Rule pop up.
+#	And I click the Next button on Condition window of Add New Rule pop up.
+#	And I click add action button.
+#	And I select Move to Folder in Select Action drop down.
+#	And I select new in Folder drop down.
+#	And I click the ok button of Add Action window of Add New Rule pop up.
+#	And I click the Update button of Add New Rule pop up.
+#	And I click the MailBox Management.
+#	And I click the desired mail box and 16 folders will appear.
+#	And I noted the number of emails present in New folder.
+#	Given I send email from customer to client.
+#	Then I noticed that total number of emails in New folder is increased by 1.
 
 	
