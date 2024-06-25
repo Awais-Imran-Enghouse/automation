@@ -11,7 +11,7 @@ Scenario: 001 Mail Box has 16 folders in it.
 	And I click the MailBox Management.
 	And I click the desired mail box and 16 folders will appear.
 
-Scenario: 002 Number of emails in Waiting folder.
+Scenario: 002 Calculating Number of emails in Waiting folder, sending email and ensuring total number is increase by 1.
 	Given I am at VCC login page.
 	When I enter credentials.
 	Then I get logged in.
@@ -54,7 +54,44 @@ Scenario: 005 Pinned query will not be removed even when overflowing.
 	And I find that the pinned query is not removed.
 	And I find that there are total 10 queries in the list.
 
-	#keep it on pending untill the issue resolved
+
+
+@DeletingNewRoutingRules
+Scenario: 006 Moving the next coming email to New folder using Routing Rules.
+	##assigning Routing Rules to queue
+	Given I am at VCC login page.
+	When I enter credentials.
+	Then I get logged in.
+	When I click the ERMSupport.
+	And I click on the mailboxes.
+	And I click on the edit button of mailbox.
+	And I click on the Routing Routes.
+	And I click on the Add New Rules button.
+	When I enter the name "Tesing Route" of new Routing Rule.
+	And I click the Next button of Add New Rule pop up.
+	And I check Apply New Emails.
+	And I click the Next button of folder window of pop up.
+	And I click on the Add Condition.
+	And I select subject in first drop down.
+	And I select contains in second drop down.
+	And I enter "queue2" in the input bar.
+	And I click the ok button of Add Condition page of Add New Rule pop up.
+	And I click the Next button on Condition window of Add New Rule pop up.
+	And I click add action button.
+	And I select Move to Folder in Select Action drop down.
+	And I select new in Folder drop down.
+	And I click the ok button of Add Action window of Add New Rule pop up.
+	And I click the Update button of Add New Rule pop up.
+	And I click the MailBox Management.
+	And I click the desired mail box and 16 folders will appear.
+	And I noted the number of emails present in New folder.
+	Given I send email from customer to client.
+	Then I noticed that total number of emails in New folder is increased by 1.
+
+
+
+
+#keep it on pending untill the issue resolved
 Scenario: 007 Moving email from waiting folder to other folders.
 	Given I am at VCC login page.
 	When I enter credentials.
@@ -65,37 +102,3 @@ Scenario: 007 Moving email from waiting folder to other folders.
 	And I right click on the email.
 	And I hover over and move to handled/deleted/span folder.
 	And I check in the handled/deleted/span folder that moved email is in the folder.
-
-@DeletingNewRoutingRules
-Scenario: 006 Moving the next coming email to New folder using Routing Rules.
-	##assigning Routing Rules to queue
-	Given I am at VCC login page.
-#	When I enter credentials.
-#	Then I get logged in.
-#	When I click the ERMSupport.
-#	And I click on the mailboxes.
-#	And I click on the edit button of mailbox.
-#	And I click on the Routing Routes.
-#	And I click on the Add New Rules button.
-	When I enter the name "Tesing Route" of new Routing Rule.
-#	And I click the Next button of Add New Rule pop up.
-#	And I check Apply New Emails.
-#	And I click the Next button of folder window of pop up.
-#	And I click on the Add Condition.
-#	And I select subject in first drop down.
-#	And I select contains in second drop down.
-#	And I enter "queue2" in the input bar.
-#	And I click the ok button of Add Condition page of Add New Rule pop up.
-#	And I click the Next button on Condition window of Add New Rule pop up.
-#	And I click add action button.
-#	And I select Move to Folder in Select Action drop down.
-#	And I select new in Folder drop down.
-#	And I click the ok button of Add Action window of Add New Rule pop up.
-#	And I click the Update button of Add New Rule pop up.
-#	And I click the MailBox Management.
-#	And I click the desired mail box and 16 folders will appear.
-#	And I noted the number of emails present in New folder.
-#	Given I send email from customer to client.
-#	Then I noticed that total number of emails in New folder is increased by 1.
-
-	
