@@ -1,0 +1,83 @@
+{
+  "uuid": "b96a56fc45074da28ddfd69948bbba32",
+  "historyId": "Login to VCC application",
+  "fullName": "Login to VCC application",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "ENG-N9BFI2VQIZA"
+    },
+    {
+      "name": "feature",
+      "value": "001_loginCcSupport"
+    },
+    {
+      "name": "tag",
+      "value": "001_loginCcSupport"
+    }
+  ],
+  "links": [],
+  "name": "Login to VCC application",
+  "status": "passed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "Given  I am at VCC login page.",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1719400093621,
+      "stop": 1719400096446
+    },
+    {
+      "name": "When  I enter credentials.",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1719400096450,
+      "stop": 1719400101836
+    },
+    {
+      "name": "Then  I get logged in.",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1719400101837,
+      "stop": 1719400113666
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1719400093283,
+  "stop": 1719400113669
+}

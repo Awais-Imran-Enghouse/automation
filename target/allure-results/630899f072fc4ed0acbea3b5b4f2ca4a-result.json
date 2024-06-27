@@ -1,0 +1,83 @@
+{
+  "uuid": "fdf08d6ba7e044d997e2970c7126802d",
+  "historyId": "Login with wrong credentials",
+  "fullName": "Login with wrong credentials",
+  "labels": [
+    {
+      "name": "thread",
+      "value": "NonParallelWorker"
+    },
+    {
+      "name": "host",
+      "value": "ENG-N9BFI2VQIZA"
+    },
+    {
+      "name": "feature",
+      "value": "001_loginCcSupport"
+    },
+    {
+      "name": "tag",
+      "value": "001_loginCcSupport"
+    }
+  ],
+  "links": [],
+  "name": "Login with wrong credentials",
+  "status": "passed",
+  "statusDetails": {
+    "known": false,
+    "muted": false,
+    "flaky": false
+  },
+  "stage": "finished",
+  "steps": [
+    {
+      "name": "Given  I am at VCC login page.",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1719400116472,
+      "stop": 1719400119873
+    },
+    {
+      "name": "When  I enter wrong credentials.",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1719400119873,
+      "stop": 1719400125362
+    },
+    {
+      "name": "Then  I get 'Error' message.",
+      "status": "passed",
+      "statusDetails": {
+        "known": false,
+        "muted": false,
+        "flaky": false
+      },
+      "stage": "finished",
+      "steps": [],
+      "attachments": [],
+      "parameters": [],
+      "start": 1719400125362,
+      "stop": 1719400125394
+    }
+  ],
+  "attachments": [],
+  "parameters": [],
+  "start": 1719400116472,
+  "stop": 1719400125394
+}
